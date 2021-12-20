@@ -16,7 +16,7 @@ function Home() {
         <h1>Olá, meu nome é <br /><strong>Lucas Ferreira</strong></h1>
         <p>
           Sou desenvolvedor web, atuando na área de front-end. <br />
-          Se quiser saber um pouco dos meu trabalho, clica aqui.
+          Se quiser saber um pouco do meu trabalho, clica aqui.
         </p>
         <button onClick={handleClick}>Trabalhos</button>
       </section>
