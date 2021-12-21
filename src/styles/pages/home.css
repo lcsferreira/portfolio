@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   width: 50%;
+  animation: splash-in 0.6s forwards;
 }
 
 .description h1{
@@ -33,12 +34,13 @@
   padding-right: 20px;
   color: whitesmoke;
   background-color: #1C1C1C;
+  transition: all 0.5s;
 }
 
 .description button:hover{
   cursor: pointer;
-  filter: brightness(70%);
-  transition: 0.5s;
+  filter: brightness(120%);
+  background-color: #585858;
 }
 
 .perfil-photo-main img{
@@ -56,4 +58,14 @@
   margin-top: 30px;
   justify-content: center;
   align-items: center;
+  animation: splash-in 0.6s forwards;
+}
+
+@keyframes splash-in{
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
 }
