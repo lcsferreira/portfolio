@@ -9,7 +9,7 @@ function NavBar() {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/trabalhos">Trabalhos</Link>
+        <Link to="/experiencia">Experiência</Link>
       </li>
       <li>
         <Link to="/sobre">Sobre</Link>

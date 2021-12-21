@@ -7,7 +7,7 @@ function Home() {
   const history = useHistory();
 
   function handleClick() {
-    history.push("trabalhos");
+    history.push("experiencia");
   }
 
   return (
@@ -16,9 +16,9 @@ function Home() {
         <h1>Olá, meu nome é <br /><strong>Lucas Ferreira</strong></h1>
         <p>
           Sou desenvolvedor web, atuando na área de front-end. <br />
-          Se quiser saber um pouco do meu trabalho, clica aqui.
+          Se quiser saber um pouco da minha carreira, clique aqui.
         </p>
-        <button onClick={handleClick}>Trabalhos</button>
+        <button onClick={handleClick}>Experiência</button>
       </section>
       <section className="perfil-photo-main">
         <img src={perfilPhoto} alt="Foto perfil ilustrativa" />

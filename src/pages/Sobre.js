@@ -1,4 +1,4 @@
-import React, { createRef } from 'react'
+import React from 'react'
 import CardInfo from '../components/CardInfo';
 import "../styles/pages/sobre.css"
 
