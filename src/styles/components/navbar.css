@@ -23,7 +23,7 @@
 
 .nav-bar a:hover{
   border-bottom: 2px solid;
-  background-color: rgb(206, 206, 206);
+  background-color: rgb(230, 230, 230);
   border-color: var(--main-font-color);
 }
 

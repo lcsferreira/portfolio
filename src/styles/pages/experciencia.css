@@ -5,7 +5,7 @@
 .content-container{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 36px;
 }
 
@@ -24,6 +24,18 @@
   flex-direction: row;
   justify-content: space-around;
   width: 180px;
+  margin-top: 20px;
+}
+
+.button-download:hover{
+  cursor: pointer;
+  filter: brightness(110%);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.content-container h2{
+  margin-bottom: 0;
+  border-bottom: 1px solid #1C1C1C;
 }
 
 .button-download img{
@@ -33,5 +45,53 @@
 
 .skills{
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+.skills ul{
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.skills li{
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.bar{
+  content: "";
+  height: 10px;
+  width: 200px;
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.level-react{
+  content: "";
+  height: 10px;
+  background-color: black;
+  width: 150px;
+}
+
+.level-angular{
+  content: "";
+  height: 10px;
+  background-color: black;
+  width: 110px;
+}
+
+.level-c{
+  content: "";
+  height: 10px;
+  background-color: black;
+  width: 180px;
+}
+.level-java{
+  content: "";
+  height: 10px;
+  background-color: black;
+  width: 90px;
 }

@@ -36,22 +36,34 @@ function Experiencia() {
         </section>
       </div>
       <div>
-        <section>
+        <section className="skills">
           <h2>
             Habilidades
           </h2>
           <ul>
             <li>
               React
+              <div className="bar">
+                <div className="level-react"></div>
+              </div>
             </li>
             <li>
               Angular
+              <div className="bar">
+                <div className="level-angular"></div>
+              </div>
             </li>
             <li>
               C
+              <div className="bar">
+                <div className="level-c"></div>
+              </div>
             </li>
             <li>
               Java
+              <div className="bar">
+                <div className="level-java"></div>
+              </div>
             </li>
           </ul>
         </section>

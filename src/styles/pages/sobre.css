@@ -45,7 +45,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  
 }
 
 .arrow{
@@ -57,6 +56,7 @@
   border-radius: 20px;
   padding: 16px 16px;
   cursor: pointer; 
+  transition: all 0.2s ease-out;
 }
 
 .arrow:hover{
@@ -82,6 +82,7 @@
 @keyframes splash-in{
   from{
     transform: scale(0);
+    
   }
   to{
     transform: scale(1);
