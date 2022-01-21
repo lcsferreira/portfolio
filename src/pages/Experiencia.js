@@ -1,6 +1,14 @@
 import React from 'react'
 import "../styles/pages/experciencia.css"
 import downloadIcon from "../assets/file-arrow-down-solid.svg";
+import angularIcon from "../assets/icons/angular-svgrepo-com.svg";
+import csharpIcon from "../assets/icons/c-sharp-svgrepo-com.svg"
+import cssIcon from "../assets/icons/css-fill-svgrepo-com.svg";
+import htmlIcon from "../assets/icons/html-fill-svgrepo-com.svg"
+import javaIcon from "../assets/icons/java-svgrepo-com.svg"
+import jsIcon from "../assets/icons/javascript-svgrepo-com.svg"
+import reactIcon from "../assets/icons/react-svgrepo-com.svg"
+import resumePdf from "../assets/resume/LucasFerreira.pdf"
 
 
 function Experiencia() {
@@ -36,41 +44,26 @@ function Experiencia() {
         </section>
       </div>
       <div>
-        <section className="skills">
+        <section className="tecnologies">
           <h2>
-            Habilidades
+            Tecnologias
           </h2>
-          <ul>
-            <li>
-              React
-              <div className="bar">
-                <div className="level-react"></div>
-              </div>
-            </li>
-            <li>
-              Angular
-              <div className="bar">
-                <div className="level-angular"></div>
-              </div>
-            </li>
-            <li>
-              C
-              <div className="bar">
-                <div className="level-c"></div>
-              </div>
-            </li>
-            <li>
-              Java
-              <div className="bar">
-                <div className="level-java"></div>
-              </div>
-            </li>
-          </ul>
+          <div className="tecnologies-icons">
+            <img src={reactIcon} alt="ícone angular" />
+            <img src={htmlIcon} alt="ícone angular" />
+            <img src={cssIcon} alt="ícone angular" />
+            <img src={angularIcon} alt="ícone angular" />
+            <img src={jsIcon} alt="ícone angular" />
+            <img src={javaIcon} alt="ícone angular" />
+            <img className="last" src={csharpIcon} alt="ícone angular" />
+          </div>
         </section>
         <section className="download-resume">
-          <button className="button-download">
-            <img src={downloadIcon} alt="" /> Currículo
-          </button>
+          <a href={resumePdf} download="curriculoLSF">
+            <button className="button-download">
+              <img src={downloadIcon} alt="" /> Currículo
+            </button>
+          </a>
         </section>
       </div>
     </div>

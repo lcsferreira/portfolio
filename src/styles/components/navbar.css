@@ -7,6 +7,15 @@
   height: 45px;
   align-items: center;
   margin: 0 auto;
+  padding: 0;
+}
+
+.nav-bar-links{
+  width: 425px;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  margin-left: 80px;
 }
 
 .nav-bar a{
@@ -18,12 +27,16 @@
   padding-right: 3px;
   padding-bottom: 8px;
   border-bottom: 2px solid transparent;
-  transition: all 250ms ease-out;
+  transition: all 500ms ease-out;
 }
 
 .nav-bar a:hover{
   border-bottom: 2px solid;
   background-color: rgb(230, 230, 230);
   border-color: var(--main-font-color);
+}
+
+.nav-bar h1:hover{
+  cursor:default;
 }
 
