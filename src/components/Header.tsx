@@ -104,7 +104,6 @@ export const Header = () => {
       initial="hidden"
       animate="visible"
     >
-      {/* Desktop Navigation */}
       <motion.nav
         className="hidden lg:flex items-center gap-4 bg-glass-bg rounded-md px-4 py-2 backdrop-blur-md mx-auto z-10 fixed top-4 left-1/2 transform -translate-x-1/2"
         variants={navVariants}
@@ -138,7 +137,6 @@ export const Header = () => {
         </ul>
       </motion.nav>
 
-      {/* Mobile Menu Button */}
       <motion.button
         onClick={toggleMobileMenu}
         className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md bg-glass-bg backdrop-blur-md text-text-secondary hover:text-primary transition-colors z-10 fixed top-4 left-4"
@@ -158,7 +156,6 @@ export const Header = () => {
         </motion.div>
       </motion.button>
 
-      {/* Desktop Switches */}
       <motion.div
         className="hidden lg:flex items-center gap-4 ml-4 justify-end w-full"
         initial={{ opacity: 0, x: 50 }}
@@ -183,7 +180,6 @@ export const Header = () => {
         </motion.div>
       </motion.div>
 
-      {/* Mobile Switches */}
       <motion.div
         className="flex lg:hidden items-center gap-3 justify-end w-full"
         initial={{ opacity: 0, x: 50 }}
@@ -210,7 +206,6 @@ export const Header = () => {
         </motion.div>
       </motion.div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div

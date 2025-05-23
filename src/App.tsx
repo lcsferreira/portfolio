@@ -3,6 +3,7 @@ import { HeroSection } from "./components/Layout/HeroSection";
 
 import { motion } from "motion/react";
 import { useRef } from "react";
+import { ProjectSection } from "./components/Layout/ProjectSection";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <motion.main
-      className="flex flex-col min-h-screen bg-dark-bg text-text font-family overflow-hidden"
+      className="flex bg-gradient-to-b from-[#1e1e1e] to-[#0b0d20] flex-col min-h-screen text-text font-family overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -41,7 +42,6 @@ function App() {
     >
       <Header />
 
-      {/* Background SVG responsivo com parallax */}
       <div className="max-w-[1440px] mx-auto relative w-full px-4 sm:px-6 lg:px-8 h-full">
         <motion.div
           className="flex flex-col relative z-10"
@@ -49,10 +49,16 @@ function App() {
         >
           <HeroSection />
         </motion.div>
+
+        <motion.div
+          className="flex flex-col relative z-10"
+          variants={sectionVariants}
+        >
+          <ProjectSection />
+        </motion.div>
       </div>
 
-      {/* Future sections with stagger animations */}
-      <motion.section
+      {/* <motion.section
         className="px-4 sm:px-6 lg:px-8 py-16"
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -85,9 +91,9 @@ function App() {
             Coming soon...
           </motion.p>
         </motion.div>
-      </motion.section>
+      </motion.section> */}
 
-      <motion.section
+      {/* <motion.section
         className="px-4 sm:px-6 lg:px-8 py-16"
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -155,7 +161,7 @@ function App() {
             Coming soon...
           </motion.p>
         </motion.div>
-      </motion.section>
+      </motion.section> */}
     </motion.main>
   );
 }

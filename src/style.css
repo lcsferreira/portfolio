@@ -27,16 +27,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Melhorias para acessibilidade e touch */
-@media (max-width: 1024px) {
-  button,
-  a,
-  [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
-  }
-}
-
 /* Ajustes para telas muito pequenas */
 @media (max-width: 320px) {
   html {
