@@ -1,6 +1,5 @@
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/Layout/HeroSection";
-
 import { motion } from "motion/react";
 import { useRef } from "react";
 import { ProjectSection } from "./components/Layout/ProjectSection";

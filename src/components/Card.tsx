@@ -3,7 +3,7 @@ import NextPage from "../assets/NextPage.svg";
 interface CardProps {
   title: string;
   description: string;
-  image?: string; // Mudei para opcional, já que a imagem superior na imagem é mais um fundo de cabeçalho
+  image?: string;
   link: string;
 }
 
@@ -12,12 +12,7 @@ export const Card = ({ title, description, image, link }: CardProps) => {
     <div className="bg-secondary rounded-lg shadow-lg overflow-hidden flex flex-col h-full max-w-[550px]">
       {image && (
         <div className="relative h-48 bg-gray-800 flex items-center justify-center overflow-hidden">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+          <img src={image} alt={title} className="w-full h-full" />
         </div>
       )}
       <div className="p-0 flex flex-col flex-grow">

@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import Lucas from "../../assets/Image.png";
 // import Group from "../../assets/Group.svg";
 import { useRef } from "react";
-
+import { portfolioData } from "../../api/data";
 export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -12,6 +12,8 @@ export const HeroSection = () => {
   // });
 
   // const bgOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.7, 0.4]);
+
+  const { name, title } = portfolioData;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -140,7 +142,7 @@ export const HeroSection = () => {
                 className="text-primary font-bold text-3xl sm:text-4xl lg:text-5xl block mt-2"
                 variants={nameVariants}
               >
-                Lucas Ferreira
+                {name}
               </motion.span>
               <br />
               <motion.span
@@ -149,7 +151,7 @@ export const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
-                A Web Software Developer
+                {title}
               </motion.span>
             </motion.p>
           </motion.div>
