@@ -10,3 +10,97 @@
   --color-glass-bg: rgba(11, 13, 32, 0.5);
   --font-family: "Quicksand", sans-serif;
 }
+
+/* Estilos globais responsivos */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  /* Otimizações para performance de animações */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Melhorias para acessibilidade e touch */
+@media (max-width: 1024px) {
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 320px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Otimizações para animações suaves */
+* {
+  will-change: auto;
+}
+
+/* Elementos que frequentemente são animados */
+[data-framer-motion] {
+  will-change: transform, opacity;
+}
+
+/* Efeitos de glassmorphism aprimorados */
+.glass-enhanced {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(11, 13, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animações de carregamento suaves */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Efeitos de hover aprimorados */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(64, 96, 221, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Disable animations para usuários que preferem movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

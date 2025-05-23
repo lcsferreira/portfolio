@@ -1,32 +1,162 @@
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/Layout/HeroSection";
-import Group from "./assets/Group.svg";
+
+import { motion } from "motion/react";
+import { useRef } from "react";
+
 function App() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <main className="flex flex-col h-screen bg-dark-bg text-text font-family">
+    <motion.main
+      className="flex flex-col min-h-screen bg-dark-bg text-text font-family overflow-hidden"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      ref={containerRef}
+    >
       <Header />
-      {/* Group.svg de background */}
-      {/* <div className="relative w-full h-full"> */}
-      {/* <div className="absolute left-[10%]"> */}
-      <img
-        src={Group}
-        alt="background"
-        className="absolute left-[10%] top-[-20%] w-[470px] h-[660px]"
-      />
-      <img
-        src={Group}
-        alt="background"
-        className="absolute right-[10%] top-[150px] w-[470px] h-[660px] rotate-180"
-      />
-      {/* </div> */}
-      {/* </div> */}
-      <div className="flex flex-col p-4">
-        <HeroSection />
+
+      {/* Background SVG responsivo com parallax */}
+      <div className="max-w-[1440px] mx-auto relative w-full px-4 sm:px-6 lg:px-8 h-full">
+        <motion.div
+          className="flex flex-col relative z-10"
+          variants={sectionVariants}
+        >
+          <HeroSection />
+        </motion.div>
       </div>
-      <section>{/* TODO: Add projects carousel */}</section>
-      <section>{/* TODO: Add about me information */}</section>
-      <section>{/* TODO: Add Professional experience information */}</section>
-    </main>
+
+      {/* Future sections with stagger animations */}
+      <motion.section
+        className="px-4 sm:px-6 lg:px-8 py-16"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.div
+          className="max-w-4xl mx-auto text-center"
+          initial={{ scale: 0.9 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Projects Portfolio
+          </motion.h2>
+          <motion.p
+            className="text-text-secondary text-lg"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            Coming soon...
+          </motion.p>
+        </motion.div>
+      </motion.section>
+
+      <motion.section
+        className="px-4 sm:px-6 lg:px-8 py-16"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.div
+          className="max-w-4xl mx-auto text-center"
+          initial={{ scale: 0.9 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            About Me
+          </motion.h2>
+          <motion.p
+            className="text-text-secondary text-lg"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            Coming soon...
+          </motion.p>
+        </motion.div>
+      </motion.section>
+
+      <motion.section
+        className="px-4 sm:px-6 lg:px-8 py-16"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.div
+          className="max-w-4xl mx-auto text-center"
+          initial={{ scale: 0.9 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Professional Experience
+          </motion.h2>
+          <motion.p
+            className="text-text-secondary text-lg"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            Coming soon...
+          </motion.p>
+        </motion.div>
+      </motion.section>
+    </motion.main>
   );
 }
 
