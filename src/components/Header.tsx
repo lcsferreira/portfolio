@@ -1,10 +1,12 @@
-import { FaGlobe, FaMoon, FaBars, FaTimes } from "react-icons/fa";
+import { FaGlobe, FaMoon, FaBars, FaTimes, FaSun } from "react-icons/fa";
 import { Switch } from "./Switch";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const { theme, toggleTheme } = useTheme();
+  const isDarkMode = theme === "dark";
   const [isLanguage, setIsLanguage] = useState<boolean>(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
@@ -166,8 +168,8 @@ export const Header = () => {
           <Switch
             id="dark-mode-switch"
             isChecked={isDarkMode}
-            onChange={() => setIsDarkMode(!isDarkMode)}
-            icon={<FaMoon size={16} />}
+            onChange={toggleTheme}
+            icon={isDarkMode ? <FaMoon size={16} /> : <FaSun size={16} />}
           />
         </motion.div>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
@@ -190,8 +192,8 @@ export const Header = () => {
           <Switch
             id="mobile-dark-mode-switch"
             isChecked={isDarkMode}
-            onChange={() => setIsDarkMode(!isDarkMode)}
-            icon={<FaMoon size={14} />}
+            onChange={toggleTheme}
+            icon={isDarkMode ? <FaMoon size={14} /> : <FaSun size={14} />}
             size="sm"
           />
         </motion.div>
