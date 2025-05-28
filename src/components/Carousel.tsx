@@ -113,7 +113,7 @@ export const Carousel = ({
           // Define base classes for each item
           // Using w-[60%] as a starting point, can be made responsive. mx-1 for small gap.
           let itemDynamicClasses =
-            "flex-shrink-0 w-[60%] transition-all duration-500 ease-in-out mx-1";
+            "flex-shrink-0 w-[60%] transition-all duration-500 ease-in-out mx-1 flex items-center justify-center";
 
           // Apply styles based on distance from current index
           if (distance === 0) {

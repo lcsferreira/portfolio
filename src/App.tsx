@@ -37,7 +37,7 @@ function App() {
     <motion.main
       className={`${
         theme === "dark" ? "dark" : ""
-      } flex flex-col min-h-screen text-text font-family overflow-hidden bg-white dark:bg-gradient-to-b dark:from-[#1e1e1e] dark:to-[#0b0d20]`}
+      } flex flex-col min-h-screen text-text font-family overflow-hidden bg-gradient-to-b from-[#f9f8ff] to-[#cbd3ff] dark:bg-gradient-to-b dark:from-[#1e1e1e] dark:to-[#0b0d20]`}
       variants={containerVariants}
       initial="hidden"
       animate="visible"

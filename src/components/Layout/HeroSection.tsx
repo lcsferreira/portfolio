@@ -135,18 +135,18 @@ export const HeroSection = () => {
           /> */}
 
           <motion.div variants={itemVariants} className="z-10">
-            <motion.p className="text-text-secondary text-lg sm:text-xl lg:text-2xl">
+            <motion.p className="text-primary dark:text-text-secondary text-lg sm:text-xl lg:text-2xl">
               Hello, I am
               <br />
               <motion.span
-                className="text-primary font-bold text-3xl sm:text-4xl lg:text-5xl block mt-2"
+                className="text-secondary dark:text-primary font-bold text-3xl sm:text-4xl lg:text-5xl block mt-2"
                 variants={nameVariants}
               >
                 {name}
               </motion.span>
               <br />
               <motion.span
-                className="text-text-secondary text-lg sm:text-xl lg:text-2xl font-bold block mt-2"
+                className="text-primary dark:text-text-secondary text-lg sm:text-xl lg:text-2xl font-bold block mt-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
