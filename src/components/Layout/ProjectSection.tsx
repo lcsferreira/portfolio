@@ -7,7 +7,7 @@ export const ProjectSection = () => {
 
   return (
     // TODO: Implement the project section
-    <section className="py-24 px-4 sm:px-6 lg:px-8 h-[100vh]">
+    <section className="px-4 sm:px-6 lg:px-8 h-[100vh] flex justify-center items-center">
       <Carousel
         autoPlay={false}
         interval={5000}

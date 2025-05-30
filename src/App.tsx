@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useRef } from "react";
 import { ProjectSection } from "./components/Layout/ProjectSection";
 import { useTheme } from "./contexts/ThemeContext";
+import { AboutMeSection } from "./components/Layout/AbouteMeSection";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -58,6 +59,13 @@ function App() {
           variants={sectionVariants}
         >
           <ProjectSection />
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col relative z-10"
+          variants={sectionVariants}
+        >
+          <AboutMeSection />
         </motion.div>
       </div>
 

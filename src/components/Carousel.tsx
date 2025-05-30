@@ -172,9 +172,9 @@ export const Carousel = ({
             <button
               key={dotIndex}
               onClick={() => goToDot(dotIndex)}
-              className={`h-2 w-2 rounded-full ${
-                currentIndex === dotIndex ? "bg-secondary" : "bg-text-secondary"
-              } hover:bg-primary transition-colors duration-200 focus:outline-none`}
+              className={`h-3 w-3 rounded-full ${
+                currentIndex === dotIndex ? "scale-100" : "scale-75"
+              } bg-secondary hover:bg-primary transition-colors duration-200 focus:outline-none`}
               aria-label={`Go to slide ${dotIndex + 1}`}
             />
           ))}

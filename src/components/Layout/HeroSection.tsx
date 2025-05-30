@@ -170,7 +170,7 @@ export const HeroSection = () => {
               Download CV
             </motion.button>
             <motion.button
-              className="border-2 hover:cursor-pointer border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 text-sm sm:text-base"
+              className="border-2 hover:cursor-pointer border-primary text-primary hover:bg-primary hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary font-semibold py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 text-sm sm:text-base"
               variants={buttonVariants}
               whileHover="hover"
               initial={{ opacity: 0, x: 30 }}
