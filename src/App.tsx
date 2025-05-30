@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { useRef } from "react";
 import { ProjectSection } from "./components/Layout/ProjectSection";
 import { useTheme } from "./contexts/ThemeContext";
-import { AboutMeSection } from "./components/Layout/AbouteMeSection";
+import { AboutMeSection } from "./components/Layout/AboutMeSection";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
