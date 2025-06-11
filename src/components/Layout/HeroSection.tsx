@@ -3,15 +3,11 @@ import Lucas from "../../assets/Image.png";
 // import Group from "../../assets/Group.svg";
 import { useRef } from "react";
 import { portfolioData } from "../../api/data";
+import { GlassCard } from "../GlassCard";
+import GlareHover from "../GlareHover";
+
 export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-
-  // const { scrollYProgress } = useScroll({
-  //   target: containerRef,
-  //   offset: ["start start", "end start"],
-  // });
-
-  // const bgOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.7, 0.4]);
 
   const { name, title } = portfolioData;
 
@@ -25,46 +21,6 @@ export const HeroSection = () => {
       },
     },
   };
-
-  // const topSvgVariants = {
-  //   hidden: {
-  //     scale: 0.8,
-  //     opacity: 0,
-  //     y: -100,
-  //     rotate: -10,
-  //   },
-  //   visible: {
-  //     scale: 1,
-  //     opacity: 0.6,
-  //     y: 0,
-  //     rotate: 0,
-  //     transition: {
-  //       duration: 1.8,
-  //       ease: "easeOut",
-  //       delay: 0.3,
-  //     },
-  //   },
-  // };
-
-  // const bottomSvgVariants = {
-  //   hidden: {
-  //     scale: 0.8,
-  //     opacity: 0,
-  //     y: 100,
-  //     rotate: 190,
-  //   },
-  //   visible: {
-  //     scale: 1,
-  //     opacity: 0.8,
-  //     y: 0,
-  //     rotate: 180,
-  //     transition: {
-  //       duration: 1.8,
-  //       ease: "easeOut",
-  //       delay: 0.6,
-  //     },
-  //   },
-  // };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -113,29 +69,18 @@ export const HeroSection = () => {
   return (
     <motion.section
       ref={containerRef}
-      className="relative min-h-[90vh] lg:min-h-[50vh] md:min-h-[60vh] sm:min-h-[100vh] flex px-4 sm:px-6 lg:px-8"
+      className="relative min-h-screen lg:min-h-[80vh] flex items-center px-4 sm:px-6 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 relative">
-        <div className="relative flex flex-col justify-center text-center lg:text-left order-1 lg:order-1 z-10">
-          {/* <motion.img
-            src={Group}
-            alt="background decoration"
-            className="absolute -top-25 sm:-top-20 md:-top-24 lg:-top-32 left-5 sm:-left-12 md:left-5 lg:-left-0 
-                     w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] 
-                     opacity-40 sm:opacity-50 md:opacity-60 pointer-events-none"
-            variants={topSvgVariants}
-            style={{
-              opacity: bgOpacity,
-            }}
-            initial="hidden"
-            animate="visible"
-          /> */}
-
-          <motion.div variants={itemVariants} className="z-10">
-            <motion.p className="text-primary dark:text-text-secondary text-lg sm:text-xl lg:text-2xl">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <motion.div
+          variants={itemVariants}
+          className="relative flex flex-col justify-center text-center lg:text-left order-2 lg:order-1 z-10 p-8 rounded-xl shadow-lg bg-white/5 backdrop-blur-md border border-white/10"
+        >
+          <div className="z-10">
+            <p className="text-primary dark:text-text-secondary text-lg sm:text-xl lg:text-2xl">
               Hello, I am
               <br />
               <motion.span
@@ -144,7 +89,6 @@ export const HeroSection = () => {
               >
                 {name}
               </motion.span>
-              <br />
               <motion.span
                 className="text-primary dark:text-text-secondary text-lg sm:text-xl lg:text-2xl font-bold block mt-2"
                 initial={{ opacity: 0, y: 20 }}
@@ -153,59 +97,63 @@ export const HeroSection = () => {
               >
                 {title}
               </motion.span>
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
+
+          <div className="my-6 flex items-center justify-center lg:hidden">
+            <GlareHover
+              borderRadius="9999px"
+              width="150px"
+              height="150px"
+              className="border-2 border-primary/50"
+            >
+              <motion.img
+                src={Lucas}
+                alt="Lucas Ferreira"
+                className="h-full w-full rounded-full object-cover"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+              />
+            </GlareHover>
+          </div>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 lg:justify-start justify-center"
+            className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.5 }}
           >
             <motion.button
-              className="bg-primary hover:cursor-pointer hover:bg-secondary text-white font-semibold py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 text-sm sm:text-base"
+              className="bg-primary/80 backdrop-blur-sm border border-white/10 hover:bg-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-base"
               variants={buttonVariants}
               whileHover="hover"
             >
               Download CV
             </motion.button>
             <motion.button
-              className="border-2 hover:cursor-pointer border-primary text-primary hover:bg-primary hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-primary font-semibold py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 text-sm sm:text-base"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-base"
               variants={buttonVariants}
               whileHover="hover"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
             >
               My Works
             </motion.button>
           </motion.div>
-        </div>
+        </motion.div>
 
-        <div className="relative flex items-end justify-center order-1 lg:order-2 min-h-[280px] sm:min-h-[380px] md:min-h-[480px] lg:min-h-[500px]">
-          {/* <motion.img
-            src={Group}
-            alt="background decoration"
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2
-                     w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[500px]
-                     opacity-60 sm:opacity-70 md:opacity-80 pointer-events-none"
-            variants={bottomSvgVariants}
-            style={{
-              opacity: bgOpacity,
-            }}
-            initial="hidden"
-            animate="visible"
-          /> */}
-
-          <motion.img
-            src={Lucas}
-            alt="Lucas Ferreira"
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10 order-2
-                     w-96 h-96 
-                     object-cover"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-          />
+        <div className="relative order-1 hidden min-h-[400px] items-center justify-center sm:min-h-[450px] lg:order-2 lg:flex lg:min-h-[500px]">
+          <GlassCard height="400px" width="350px">
+            <motion.img
+              src={Lucas}
+              alt="Lucas Ferreira"
+              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10
+            w-96 h-96
+            object-cover"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
+            />
+          </GlassCard>
         </div>
       </div>
     </motion.section>

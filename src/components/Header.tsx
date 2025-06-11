@@ -107,7 +107,7 @@ export const Header = () => {
       animate="visible"
     >
       <motion.nav
-        className="hidden lg:flex items-center gap-4 bg-glass-bg rounded-md px-4 py-2 backdrop-blur-md mx-auto z-10 fixed top-4 left-1/2 transform -translate-x-1/2"
+        className="hidden lg:flex items-center gap-4 bg-glass-bg rounded-md px-4 py-2  mx-auto z-10 fixed top-4 left-1/2 transform -translate-x-1/2 border border-white/10 overflow-hidden"
         variants={navVariants}
         whileHover="hover"
       >

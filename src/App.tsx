@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { ProjectSection } from "./components/Layout/ProjectSection";
 import { useTheme } from "./contexts/ThemeContext";
 import { AboutMeSection } from "./components/Layout/AboutMeSection";
+import { AnimatedBackground } from "./components/Layout/AnimatedBackground";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -44,6 +45,7 @@ function App() {
       animate="visible"
       ref={containerRef}
     >
+      <AnimatedBackground />
       <Header />
 
       <div className="max-w-[1440px] mx-auto relative w-full px-4 sm:px-6 lg:px-8 h-full">

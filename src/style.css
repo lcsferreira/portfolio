@@ -9,6 +9,7 @@
   --color-primary: #4060dd;
   --color-secondary: #273e9c;
   --color-glass-bg: rgba(11, 13, 32, 0.5);
+  --color-glass-bg-white: rgba(255, 255, 255, 0.3);
   --font-family: "Quicksand", sans-serif;
 }
 

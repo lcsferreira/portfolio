@@ -1,9 +1,32 @@
 import { motion } from "motion/react";
 import { useRef } from "react";
 import { portfolioData } from "../../api/data";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import type { GlassIconsItem } from "../GlassIcons";
+import GlassIcons from "../GlassIcons";
 
 export const AboutMeSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const socialIcons: GlassIconsItem[] = [
+    {
+      icon: <FaInstagram size="100%" />,
+      color: "instagram",
+      label: "Instagram",
+      url: "https://www.instagram.com/seu_usuario", // Substitua pelo seu link
+    },
+    {
+      icon: <FaGithub size="100%" />,
+      color: "github",
+      label: "GitHub",
+      url: "https://www.github.com/seu_usuario", // Substitua pelo seu link
+    },
+    {
+      icon: <FaLinkedin size="100%" />,
+      color: "linkedin",
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/seu_usuario", // Substitua pelo seu link
+    },
+  ];
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,6 +62,8 @@ export const AboutMeSection = () => {
             <p className="text-xl">Experiência</p>
           </div>
         </div>
+
+        <GlassIcons items={socialIcons} />
       </div>
     </motion.section>
   );
