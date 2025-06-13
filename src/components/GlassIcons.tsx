@@ -51,7 +51,7 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
           type="button"
           aria-label={item.label}
           onClick={() => handleIconClick(item.url)} // Adiciona o evento de clique
-          className={`relative hover:cursor-pointer bg-transparent outline-none w-[4.5em] h-[4.5em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${
+          className={`relative hover:cursor-pointer bg-transparent outline-none w-[3.5em] h-[3.5em] md:w-[4.5em] md:h-[4.5em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${
             item.customClass || ""
           }`}
         >

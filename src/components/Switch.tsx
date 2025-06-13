@@ -112,10 +112,12 @@ export const Switch = ({
         {/* Glow Effect */}
         <motion.div
           className="absolute inset-0 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(64, 96, 221, 0.2) 0%, transparent 70%)",
+          }}
           animate={{
-            background: isChecked
-              ? "radial-gradient(circle, rgba(64, 96, 221, 0.2) 0%, transparent 70%)"
-              : "transparent",
+            opacity: isChecked ? 1 : 0,
           }}
           transition={{ duration: 0.3 }}
         />

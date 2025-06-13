@@ -78,7 +78,7 @@ export const HeroSection = () => {
           src={Lucas}
           alt="Lucas Ferreira"
           className="
-          w-96 h-[500px]
+          w-96 h-[350px] md:h-[500px]
           object-cover rounded-b-full object-top"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -88,7 +88,7 @@ export const HeroSection = () => {
           variants={itemVariants}
           className="order-2 lg:order-1 z-10 p-8 w-max"
         >
-          <p className="text-primary dark:text-text-secondary  flex flex-col">
+          <p className="text-primary dark:text-text-secondary text-center md:text-left  flex flex-col">
             <motion.span
               className="text-primary dark:text-text-secondary text-xl sm:text-2xl lg:text-3xl mt-2"
               variants={nameVariants}
@@ -110,24 +110,6 @@ export const HeroSection = () => {
               {title}
             </motion.span>
           </p>
-
-          <div className="my-6 flex items-center justify-center lg:hidden">
-            <GlareHover
-              borderRadius="9999px"
-              width="150px"
-              height="150px"
-              className="border-2 border-primary/50"
-            >
-              <motion.img
-                src={Lucas}
-                alt="Lucas Ferreira"
-                className="h-full w-full rounded-full object-cover"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-              />
-            </GlareHover>
-          </div>
 
           <motion.div
             className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
@@ -151,21 +133,6 @@ export const HeroSection = () => {
             </motion.button>
           </motion.div>
         </motion.div>
-
-        {/* <div className="relative order-1 hidden min-h-[400px] items-center justify-center sm:min-h-[450px] lg:order-2 lg:flex lg:min-h-[500px]">
-          <GlassCard height="400px" width="350px">
-            <motion.img
-              src={Lucas}
-              alt="Lucas Ferreira"
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10
-            w-96 h-96
-            object-cover"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-            />
-          </GlassCard>
-        </div> */}
       </div>
     </motion.section>
   );

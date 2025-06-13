@@ -7,6 +7,7 @@ import { useTheme } from "./contexts/ThemeContext";
 import { AboutMeSection } from "./components/Layout/AboutMeSection";
 import { portfolioData } from "./api/data";
 import ScrollVelocity from "./components/ScrollVelocity";
+import { ContactSection } from "./components/Layout/ContactSection";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -62,6 +63,9 @@ function App() {
         />
         <motion.div className="flex flex-col " variants={sectionVariants}>
           <AboutMeSection />
+        </motion.div>
+        <motion.div className="flex flex-col " variants={sectionVariants}>
+          <ContactSection />
         </motion.div>
       </div>
     </motion.main>
