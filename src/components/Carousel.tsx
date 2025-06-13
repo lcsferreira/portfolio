@@ -144,7 +144,7 @@ export const Carousel = ({
           <>
             <button
               onClick={goToPrevious}
-              className="absolute top-1/2 left-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110"
+              className="absolute top-1/2 left-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-20"
               aria-label="Previous slide"
             >
               <img
@@ -155,7 +155,7 @@ export const Carousel = ({
             </button>
             <button
               onClick={goToNext}
-              className="absolute top-1/2 right-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110"
+              className="absolute top-1/2 right-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-20"
               aria-label="Next slide"
             >
               <img

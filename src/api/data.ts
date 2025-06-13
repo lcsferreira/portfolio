@@ -15,7 +15,7 @@ interface IWorkExperience {
 }
 
 interface IDevInfos {
-  technologies: string[];
+  technologies: ITechnology[];
   yearsOfExperience: number;
   expertiseAreas: string[];
   methodologies: string[];
@@ -26,11 +26,22 @@ interface ILanguage {
   level: "Básico" | "Intermediário" | "Avançado" | "Nativo";
 }
 
+export interface ITechnology {
+  name: string;
+  icon: string;
+}
+
+interface ISocial {
+  name: string;
+  link: string;
+}
+
 interface IPortfolioData {
   name: string;
   title: string;
   email: string;
   phone: string;
+  description: string;
   projects: IProjectData[];
   workExperience: IWorkExperience[];
   graduation: string;
@@ -40,13 +51,16 @@ interface IPortfolioData {
   languages: ILanguage[];
   certifications: string[]; // Lista de certificações relevantes
   hobbiesInterests: string[]; // Opcional: para dar um toque pessoal
+  social: ISocial[];
 }
 
 export const portfolioData: IPortfolioData = {
   name: "Lucas Ferreira",
   title: "Web Software Developer",
-  email: "lsferreira.dev@gmail.com",
-  phone: "+55 (11) 99999-9999",
+  email: "lucas.simoes.ferreira@gmail.com",
+  phone: "+55 (53) 99938-4646",
+  description:
+    "Desenvolvedor Web com 3 anos de experiência em desenvolvimento front-end, especializado em React e Next.js. Atuei em empresa de grande escala, startup e até mesmo como único desenvolvedor de um projeto, tenho proatividade para resolver diversos tipos de problemas, além de uma comunicação ativa e fluente.",
   projects: [
     {
       title: "E-commerce Completo (Front-end)",
@@ -112,32 +126,69 @@ export const portfolioData: IPortfolioData = {
       ],
     },
   ],
+  social: [
+    {
+      name: "GitHub",
+      link: "https://github.com/lucasferreira-dev",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/lucas-ferreira-dev/",
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/lucasferreira-dev/",
+    },
+  ],
   devInfos: {
     technologies: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "PostgreSQL",
-      "HTML5",
-      "CSS3",
-      "Styled-Components",
-      "Git",
-      "Docker",
-      "AWS (S3, EC2)",
-      "GraphQL",
-      "RESTful APIs",
+      {
+        name: "JavaScript",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      {
+        name: "TypeScript",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
+        name: "HTML5",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      },
+      {
+        name: "CSS3",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      },
+      {
+        name: "PHP",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+      },
+      {
+        name: "React",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Next.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
+        name: "Node.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+        name: "Express.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      },
+      {
+        name: "PostgreSQL",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      },
+      {
+        name: "MongoDB",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      },
     ],
-    yearsOfExperience: 5,
-    expertiseAreas: [
-      "Desenvolvimento Front-end",
-      "Desenvolvimento Back-end",
-      "Arquitetura de Software",
-      "Otimização de Performance",
-    ],
+    yearsOfExperience: 3,
+    expertiseAreas: ["Desenvolvimento Front-end"],
     methodologies: ["Scrum", "Kanban", "Desenvolvimento Ágil"],
   },
   graduation: "Ciência da Computação",
@@ -149,15 +200,14 @@ export const portfolioData: IPortfolioData = {
       name: "Inglês",
     },
   ],
-  certifications: [
-    "AWS Certified Developer – Associate",
-    "Certified ScrumMaster (CSM)",
-    "React – The Complete Guide (Udemy)",
-  ],
+  certifications: ["Formação React - Alura"],
   hobbiesInterests: [
-    "Leitura sobre novas tecnologias",
-    "Jogos de tabuleiro",
-    "Hiking",
-    "Cozinhar",
+    "Basquete",
+    "Futebol",
+    "Formula 1",
+    "Counter Strike",
+    "Call of Duty",
+    "Filmes",
+    "Séries",
   ],
 };

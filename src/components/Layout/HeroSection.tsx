@@ -1,9 +1,8 @@
 import { motion } from "motion/react";
-import Lucas from "../../assets/Image.png";
+import Lucas from "../../assets/profileImage.jpg";
 // import Group from "../../assets/Group.svg";
 import { useRef } from "react";
 import { portfolioData } from "../../api/data";
-import { GlassCard } from "../GlassCard";
 import GlareHover from "../GlareHover";
 
 export const HeroSection = () => {
@@ -69,36 +68,48 @@ export const HeroSection = () => {
   return (
     <motion.section
       ref={containerRef}
-      className="relative min-h-screen lg:min-h-[80vh] flex items-center px-4 sm:px-6 lg:px-8"
+      className="flex items-center justify-center px-4 sm:px-6 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="flex flex-row items-center justify-around w-full flex-wrap">
+        <motion.img
+          src={Lucas}
+          alt="Lucas Ferreira"
+          className="
+          w-96 h-[500px]
+          object-cover rounded-b-full object-top"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
+        />
         <motion.div
           variants={itemVariants}
-          className="relative flex flex-col justify-center text-center lg:text-left order-2 lg:order-1 z-10 p-8 rounded-xl shadow-lg bg-white/5 backdrop-blur-md border border-white/10"
+          className="order-2 lg:order-1 z-10 p-8 w-max"
         >
-          <div className="z-10">
-            <p className="text-primary dark:text-text-secondary text-lg sm:text-xl lg:text-2xl">
+          <p className="text-primary dark:text-text-secondary  flex flex-col">
+            <motion.span
+              className="text-primary dark:text-text-secondary text-xl sm:text-2xl lg:text-3xl mt-2"
+              variants={nameVariants}
+            >
               Hello, I am
-              <br />
-              <motion.span
-                className="text-secondary dark:text-primary font-bold text-3xl sm:text-4xl lg:text-5xl block mt-2"
-                variants={nameVariants}
-              >
-                {name}
-              </motion.span>
-              <motion.span
-                className="text-primary dark:text-text-secondary text-lg sm:text-xl lg:text-2xl font-bold block mt-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                {title}
-              </motion.span>
-            </p>
-          </div>
+            </motion.span>
+            <motion.span
+              className="text-secondary dark:text-primary font-bold text-4xl sm:text-4xl lg:text-5xl block mt-2"
+              variants={nameVariants}
+            >
+              {name}
+            </motion.span>
+            <motion.span
+              className="text-primary dark:text-text-secondary text-xl sm:text-2xl lg:text-3xl font-bold mt-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              {title}
+            </motion.span>
+          </p>
 
           <div className="my-6 flex items-center justify-center lg:hidden">
             <GlareHover
@@ -141,7 +152,7 @@ export const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        <div className="relative order-1 hidden min-h-[400px] items-center justify-center sm:min-h-[450px] lg:order-2 lg:flex lg:min-h-[500px]">
+        {/* <div className="relative order-1 hidden min-h-[400px] items-center justify-center sm:min-h-[450px] lg:order-2 lg:flex lg:min-h-[500px]">
           <GlassCard height="400px" width="350px">
             <motion.img
               src={Lucas}
@@ -154,7 +165,7 @@ export const HeroSection = () => {
               transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
             />
           </GlassCard>
-        </div>
+        </div> */}
       </div>
     </motion.section>
   );
