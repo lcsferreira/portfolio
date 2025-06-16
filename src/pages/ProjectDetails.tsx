@@ -6,11 +6,16 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import ChipCard from "../components/ChipCard";
 import { FaArrowLeft } from "react-icons/fa";
+import { useEffect } from "react";
 
 export const ProjectDetails = () => {
   const { projectId } = useParams();
   const { theme } = useTheme();
   const project = portfolioData.projects.find((p) => p.title === projectId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return (
@@ -29,16 +34,16 @@ export const ProjectDetails = () => {
       } flex flex-col min-h-screen text-text font-family overflow-hidden bg-[#f9f8ff] dark:bg-[#1e1e1e]`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
     >
       <Header />
       <div className="max-w-[1440px] flex flex-col gap-16 mx-auto relative w-full px-4 sm:px-6 lg:px-8 h-full py-16">
         <div className="flex flex-col gap-8">
           <motion.div
             className="flex flex-col gap-4"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0.8, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.2 }}
           >
             <Link
               to="/"
@@ -61,9 +66,9 @@ export const ProjectDetails = () => {
 
           <motion.div
             className="relative h-[400px] w-full rounded-xl overflow-hidden"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            initial={{ opacity: 0.8 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
           >
             <img
               src={`../src/assets/${project.image}`}
@@ -74,9 +79,9 @@ export const ProjectDetails = () => {
 
           <motion.div
             className="flex flex-col gap-8"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0.8, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.2 }}
           >
             <div className="flex flex-col gap-4">
               <h2 className="text-2xl font-semibold text-text-secondary">
@@ -114,9 +119,9 @@ export const ProjectDetails = () => {
             )}
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0.8, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.2 }}
               className="flex gap-4"
             >
               <a

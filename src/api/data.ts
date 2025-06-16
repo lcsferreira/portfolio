@@ -132,11 +132,11 @@ export const portfolioData: IPortfolioData = {
     {
       title: "Enersmart",
       description:
-        "Ambiente integral de desenvolvimento, gestão e operação de projetos com armazenamento de energia em baterias",
+        "Plataforma integrada para dimensionamento, gestão e operação de projetos com armazenamento de energia em baterias (BESS).",
       link: "https://enersmart.com.br/",
       image: "enersmart_cover.png",
       longDescription:
-        "O Enersmart é uma plataforma web desenvolvida para a NewCharge Energy, que permite o desenvolvimento, gestão e operação de projetos com armazenamento de energia em baterias. O sistema foi desenvolvido para facilitar o gerenciamento de projetos de energia, permitindo que os usuários possam acompanhar e controlar diferentes aspectos dos projetos, desde a concepção até a operação.",
+        "O EnerSmart é um ecossistema de software desenvolvido pela NewCharge para abranger todo o pipeline de projetos com sistemas de armazenamento. A plataforma é dividida em duas frentes principais: Ferramentas de Dimensionamento (On-Grid e Off-Grid) e um Sistema de Gestão de Energia (EMS). As ferramentas de dimensionamento utilizam algoritmos de computação evolucionária e simulação horária para otimizar o investimento e o retorno financeiro, seja para reduzir a conta de energia em sistemas conectados à rede ou para garantir a melhor combinação de solar, baterias e diesel em sistemas isolados. O EMS, por sua vez, é a solução de monitoramento e controle em tempo real que toma decisões inteligentes sobre carga/descarga das baterias, uso da rede ou geradores, e implementa estratégias como peak-shaving e load-shifting para maximizar a eficiência e a economia na fase de operação.",
       technologies: [
         "React",
         "TypeScript",
@@ -150,8 +150,9 @@ export const portfolioData: IPortfolioData = {
         "Dashboard em tempo real com dados de consumo e geração de energia",
         "Sistema de gerenciamento de projetos",
         "Monitoramento de baterias e equipamentos",
-        "Integração com APIs de terceiros",
+        "Diagrama SCADA para monitoramento em tempo real",
         "Sistema de notificações e alertas",
+        "Formulários complexos e dinâmicos para dimensionamento de projetos com armazenamento de energia em baterias",
       ],
       role: "Desenvolvedor Front-end",
       startDate: "Mar 2024",
