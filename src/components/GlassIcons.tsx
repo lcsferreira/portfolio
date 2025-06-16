@@ -19,6 +19,7 @@ const gradientMapping: Record<string, string> = {
     "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
   github: "linear-gradient(hsl(210, 10%, 25%), hsl(210, 10%, 15%))",
   linkedin: "linear-gradient(hsl(201, 89%, 40%), hsl(201, 89%, 30%))",
+  email: "linear-gradient(hsl(223, 90%, 50%), hsl(208, 90%, 50%))",
   blue: "linear-gradient(hsl(223, 90%, 50%), hsl(208, 90%, 50%))",
   purple: "linear-gradient(hsl(283, 90%, 50%), hsl(268, 90%, 50%))",
   red: "linear-gradient(hsl(3, 90%, 50%), hsl(348, 90%, 50%))",
@@ -41,7 +42,7 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
 
   return (
     <div
-      className={`grid gap-[5em] grid-cols-3 mx-auto py-[3em] overflow-visible ${
+      className={`grid justify-center items-center grid-cols-4 overflow-visible ${
         className || ""
       }`}
     >
@@ -51,7 +52,7 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
           type="button"
           aria-label={item.label}
           onClick={() => handleIconClick(item.url)} // Adiciona o evento de clique
-          className={`relative hover:cursor-pointer bg-transparent outline-none w-[3.5em] h-[3.5em] md:w-[4.5em] md:h-[4.5em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${
+          className={`relative hover:cursor-pointer bg-transparent outline-none w-[2em] h-[2em] md:w-[3em] md:h-[3em] [perspective:24em] [transform-style:preserve-3d] [-webkit-tap-highlight-color:transparent] group ${
             item.customClass || ""
           }`}
         >

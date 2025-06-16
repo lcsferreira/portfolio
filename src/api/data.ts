@@ -5,9 +5,10 @@ interface IProjectData {
   image: string;
 }
 
-interface IWorkExperience {
+export interface IWorkExperience {
   role: string;
   enterprise: string;
+  enterpriseLink: string;
   startDate: string;
   endDate: string;
   responsibilities: string[];
@@ -58,7 +59,7 @@ export const portfolioData: IPortfolioData = {
   name: "Lucas Ferreira",
   title: "Web Software Developer",
   email: "lucas.simoes.ferreira@gmail.com",
-  phone: "+55 (53) 99938-4646",
+  phone: "+5553999384646",
   description:
     "Desenvolvedor Web com 3 anos de experiência em desenvolvimento front-end, especializado em React e Next.js. Atuei em empresa de grande escala, startup e até mesmo como único desenvolvedor de um projeto, tenho proatividade para resolver diversos tipos de problemas, além de uma comunicação ativa e fluente.",
   projects: [
@@ -88,56 +89,90 @@ export const portfolioData: IPortfolioData = {
   ],
   workExperience: [
     {
-      role: "Desenvolvedor Front-end Sênior",
-      enterprise: "Tech Solutions S.A.",
-      startDate: "Janeiro 2022",
+      role: "Desenvolvedor Front-end Júnior",
+      enterprise: "NewCharge Energy",
+      enterpriseLink: "https://newcharge.com.br",
+      startDate: "Mar 2024",
       endDate: "Atual",
       responsibilities: [
-        "Liderar equipes de desenvolvedores front-end, mentorando juniores e plenos.",
-        "Definir arquitetura e padrões de desenvolvimento para novos projetos.",
-        "Colaborar com equipes de design e backend para garantir a integração perfeita.",
-        "Realizar code reviews e garantir a qualidade do código.",
+        "Responsável por 3 SAAS desenvolvidos em React TS / React JS",
+        "Responsável por criar features e dar manutenção ao código",
+        "Forte participação nas tomadas de decisão e regras de negócio",
+        "Elaboração de documentação",
+        "Análise de requisitos",
+        "Responsável por auxiliar novos integrantes do time",
+        "Conduzir calls e apresentar progresso ao restante da empresa",
       ],
       technologiesUsed: [
         "React",
-        "Next.js",
         "TypeScript",
-        "GraphQL",
-        "Jest",
-        "Cypress",
+        "Webscoket",
+        "Stripe",
+        "Tailwind",
+        "Material UI",
+        "AWS",
+        "Serverless",
       ],
     },
     {
-      role: "Desenvolvedor Full-stack Pleno",
-      enterprise: "Inovatech Ltda.",
-      startDate: "Março 2019",
-      endDate: "Dezembro 2021",
+      role: "Engenheiro de Software",
+      enterprise: "GoPE!",
+      enterpriseLink:
+        "https://www.linkedin.com/company/global-observatory-for-physical-education",
+      startDate: "Jan 2024",
+      endDate: "Dez 2024",
       responsibilities: [
-        "Desenvolver novas funcionalidades para aplicações web existentes.",
-        "Realizar manutenção e otimização de banco de dados.",
-        "Participar do ciclo completo de desenvolvimento de software, desde o planejamento à implantação.",
+        "Responsável pela análise de requisito e contato com clientes do exterior (Universidade do Texas)",
+        "Responsável pelo design do sistema",
+        "Responsável pela arquitetura e manutenção do banco de dados em MySQL",
+        "Responsável pelo desenvolvimento e manutenção do código em PHP",
       ],
-      technologiesUsed: [
-        "Vue.js",
-        "Node.js",
-        "Express.js",
-        "PostgreSQL",
-        "AWS",
+      technologiesUsed: ["PHP", "MySQL", "JavaScript", "JQuery"],
+    },
+    {
+      role: "Engenheiro de Software",
+      enterprise: "GoPA!",
+      enterpriseLink: "https://new.globalphysicalactivityobservatory.com/",
+      startDate: "Ago 2022",
+      endDate: "Ago 2023",
+      responsibilities: [
+        "Responsável pela análise de requisito e contato com clientes do exterior (Colômbia)",
+        "Responsável pelo design do sistema",
+        "Responsável pela arquitetura e manutenção do banco de dados em MySQL",
+        "Responsável pelo desenvolvimento e manutenção do código em PHP e JavaScript",
       ],
+      technologiesUsed: ["PHP", "MySQL", "JavaScript", "JQuery"],
+    },
+    {
+      role: "Estagiário em Desenvolvimento de Software",
+      enterprise: "Globant",
+      enterpriseLink: "https://www.globant.com/",
+      startDate: "Ago 2021",
+      endDate: "Ago 2022",
+      responsibilities: [
+        "Estudos em Frameworks Front-End (React e Angular) e Back-End (Spring e .NET)",
+        "Desenvolvimento de features em projeto de grande escala em React e Angular",
+        "Manutenção de código em React e Angular",
+      ],
+      technologiesUsed: ["React", "Angular", "Spring", ".NET"],
     },
   ],
   social: [
     {
       name: "GitHub",
-      link: "https://github.com/lucasferreira-dev",
+      link: "https://github.com/lcsferreira",
     },
     {
       name: "LinkedIn",
-      link: "https://www.linkedin.com/in/lucas-ferreira-dev/",
+      link: "https://www.linkedin.com/in/ls-oferreira/",
     },
     {
       name: "Instagram",
-      link: "https://www.instagram.com/lucasferreira-dev/",
+      link: "https://www.instagram.com/ls_oferreira/",
+    },
+    {
+      name: "Email",
+      link: "mailto:lucas.simoes.ferreira@gmail.com",
     },
   ],
   devInfos: {
@@ -187,7 +222,7 @@ export const portfolioData: IPortfolioData = {
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       },
     ],
-    yearsOfExperience: 3,
+    yearsOfExperience: 4,
     expertiseAreas: ["Desenvolvimento Front-end"],
     methodologies: ["Scrum", "Kanban", "Desenvolvimento Ágil"],
   },

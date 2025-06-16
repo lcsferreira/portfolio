@@ -8,6 +8,8 @@ import { AboutMeSection } from "./components/Layout/AboutMeSection";
 import { portfolioData } from "./api/data";
 import ScrollVelocity from "./components/ScrollVelocity";
 import { ContactSection } from "./components/Layout/ContactSection";
+import { WorkExperienceSection } from "./components/Layout/WorkExperienceSection";
+import { Footer } from "./components/Footer";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,9 +67,13 @@ function App() {
           <AboutMeSection />
         </motion.div>
         <motion.div className="flex flex-col " variants={sectionVariants}>
+          <WorkExperienceSection />
+        </motion.div>
+        <motion.div className="flex flex-col " variants={sectionVariants}>
           <ContactSection />
         </motion.div>
       </div>
+      <Footer />
     </motion.main>
   );
 }

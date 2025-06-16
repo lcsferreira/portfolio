@@ -1,33 +1,13 @@
 import { motion } from "motion/react";
 import { useRef } from "react";
 import { portfolioData } from "../../api/data";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import type { GlassIconsItem } from "../GlassIcons";
-import GlassIcons from "../GlassIcons";
+
 import ScrollReveal from "../ScrollReveal";
+import { AnimatedShinyText } from "../ShinyText";
 
 export const AboutMeSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const socialIcons: GlassIconsItem[] = [
-    {
-      icon: <FaInstagram size="100%" />,
-      color: "instagram",
-      label: "Instagram",
-      url: portfolioData.social[2].link, // Substitua pelo seu link
-    },
-    {
-      icon: <FaGithub size="100%" />,
-      color: "github",
-      label: "GitHub",
-      url: portfolioData.social[0].link, // Substitua pelo seu link
-    },
-    {
-      icon: <FaLinkedin size="100%" />,
-      color: "linkedin",
-      label: "LinkedIn",
-      url: portfolioData.social[1].link, // Substitua pelo seu link
-    },
-  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -42,12 +22,17 @@ export const AboutMeSection = () => {
   return (
     <motion.section
       ref={containerRef}
-      className="relative min-h-[90vh] 2xl:min-h-[70vh] lg:min-h-[50vh] md:min-h-[60vh] sm:min-h-[100vh] flex px-4 sm:px-6 lg:px-8 flex-col"
+      className=" flex px-4 sm:px-6 lg:px-8 flex-col"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <h2 className="self-center text-3xl text-text-secondary ">Sobre mim</h2>
+      <AnimatedShinyText
+        className="text-3xl text-primary text-center"
+        shimmerWidth={100}
+      >
+        Sobre mim
+      </AnimatedShinyText>
       <div className="flex justify-center items-center flex-col gap-10">
         <div className="mt-10 flex w-full justify-center">
           <div className="flex justify-end w-[200px] flex-col items-end p-2">
@@ -77,10 +62,6 @@ export const AboutMeSection = () => {
         >
           {portfolioData.description}
         </ScrollReveal>
-        <div className="flex flex-col items-center">
-          <h2 className="text-xl text-text-secondary">Redes Sociais</h2>
-          <GlassIcons items={socialIcons} />
-        </div>
       </div>
     </motion.section>
   );

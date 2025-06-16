@@ -1,4 +1,4 @@
-import { FaGlobe, FaMoon, FaBars, FaTimes, FaSun } from "react-icons/fa";
+import { FaMoon, FaBars, FaTimes, FaSun } from "react-icons/fa";
 import { Switch } from "./Switch";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -7,12 +7,26 @@ import { useTheme } from "../contexts/ThemeContext";
 export const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const isDarkMode = theme === "dark";
-  const [isLanguage, setIsLanguage] = useState<boolean>(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const headerOptions = [
+    {
+      label: "Sobre mim",
+      href: "#about-me",
+    },
+    {
+      label: "Projetos",
+      href: "#projects",
+    },
+    {
+      label: "Contato",
+      href: "#contact",
+    },
+  ];
 
   const headerVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -112,30 +126,16 @@ export const Header = () => {
         whileHover="hover"
       >
         <ul className="flex items-center gap-8 text-lg text-text-secondary">
-          <li>
-            <a
-              href="#"
-              className="hover:text-primary transition-colors duration-300"
-            >
-              About me
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="hover:text-primary transition-colors duration-300"
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="hover:text-primary transition-colors duration-300"
-            >
-              Contact
-            </a>
-          </li>
+          {headerOptions.map((option) => (
+            <li key={option.label}>
+              <a
+                href={option.href}
+                className="hover:text-primary transition-colors duration-300"
+              >
+                {option.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </motion.nav>
 
@@ -172,14 +172,6 @@ export const Header = () => {
             icon={isDarkMode ? <FaMoon size={16} /> : <FaSun size={16} />}
           />
         </motion.div>
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          <Switch
-            id="language-switch"
-            isChecked={isLanguage}
-            onChange={() => setIsLanguage(!isLanguage)}
-            icon={<FaGlobe size={16} />}
-          />
-        </motion.div>
       </motion.div>
 
       <motion.div
@@ -194,15 +186,6 @@ export const Header = () => {
             isChecked={isDarkMode}
             onChange={toggleTheme}
             icon={isDarkMode ? <FaMoon size={14} /> : <FaSun size={14} />}
-            size="sm"
-          />
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-          <Switch
-            id="mobile-language-switch"
-            isChecked={isLanguage}
-            onChange={() => setIsLanguage(!isLanguage)}
-            icon={<FaGlobe size={14} />}
             size="sm"
           />
         </motion.div>

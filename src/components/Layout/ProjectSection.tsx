@@ -1,6 +1,7 @@
 import { portfolioData } from "../../api/data";
 import { Card } from "../Card";
 import { Carousel } from "../Carousel";
+import { AnimatedShinyText } from "../ShinyText";
 
 export const ProjectSection = () => {
   const { projects } = portfolioData;
@@ -8,7 +9,12 @@ export const ProjectSection = () => {
   return (
     // TODO: Implement the project section
     <section className="px-4 sm:px-6 lg:px-8  flex justify-center items-center flex-col gap-10">
-      <h2 className="self-center text-3xl text-text-secondary ">Projetos</h2>
+      <AnimatedShinyText
+        className="text-3xl text-primary text-left"
+        shimmerWidth={100}
+      >
+        Projetos
+      </AnimatedShinyText>
       <Carousel
         autoPlay={false}
         interval={5000}
