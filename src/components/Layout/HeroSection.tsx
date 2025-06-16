@@ -87,6 +87,15 @@ export const HeroSection = () => {
     },
   };
 
+  const handleDownloadCV = () => {
+    // TODO: Implement CV download
+    const pdfUrl = "./src/assets/Ferreira_CV.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Lucas_Ferreira_CV.pdf";
+    link.click();
+  };
+
   return (
     <motion.section
       ref={containerRef}
@@ -147,18 +156,12 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 1.5 }}
           >
             <motion.button
-              className="bg-primary/80 backdrop-blur-sm border border-white/10 hover:bg-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-base"
+              className="bg-primary/80 backdrop-blur-sm border border-white/10 hover:bg-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-base hover:cursor-pointer"
               variants={buttonVariants}
               whileHover="hover"
+              onClick={handleDownloadCV}
             >
               Download CV
-            </motion.button>
-            <motion.button
-              className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-base"
-              variants={buttonVariants}
-              whileHover="hover"
-            >
-              My Works
             </motion.button>
           </motion.div>
         </motion.div>

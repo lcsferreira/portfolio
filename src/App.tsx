@@ -56,20 +56,32 @@ function App() {
           <HeroSection />
         </motion.div>
 
-        <motion.div className="flex flex-col " variants={sectionVariants}>
+        <motion.div
+          id="projects"
+          className="flex flex-col "
+          variants={sectionVariants}
+        >
           <ProjectSection />
         </motion.div>
         <ScrollVelocity
           className="mt-10"
           technologies={portfolioData.devInfos.technologies}
         />
-        <motion.div className="flex flex-col " variants={sectionVariants}>
+        <motion.div
+          id="about-me"
+          className="flex flex-col "
+          variants={sectionVariants}
+        >
           <AboutMeSection />
         </motion.div>
         <motion.div className="flex flex-col " variants={sectionVariants}>
           <WorkExperienceSection />
         </motion.div>
-        <motion.div className="flex flex-col " variants={sectionVariants}>
+        <motion.div
+          id="contact"
+          className="flex flex-col "
+          variants={sectionVariants}
+        >
           <ContactSection />
         </motion.div>
       </div>

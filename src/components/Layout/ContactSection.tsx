@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { portfolioData } from "../../api/data";
 import GlassIcons, { type GlassIconsItem } from "../GlassIcons";
 import { AnimatedShinyText } from "../ShinyText";
@@ -10,12 +10,6 @@ export const ContactSection = () => {
   const [message, setMessage] = useState("");
 
   const socialIcons: GlassIconsItem[] = [
-    {
-      icon: <FaInstagram size="100%" />,
-      color: "instagram",
-      label: "Instagram",
-      url: portfolioData.social[2].link,
-    },
     {
       icon: <FaGithub size="100%" />,
       color: "github",
@@ -32,7 +26,7 @@ export const ContactSection = () => {
       icon: <FaEnvelope size="100%" />,
       color: "email",
       label: "Email",
-      url: portfolioData.social[3].link,
+      url: portfolioData.social[2].link,
     },
   ];
 

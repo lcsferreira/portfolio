@@ -27,7 +27,7 @@ export const ProjectSection = () => {
             title={project.title}
             description={project.description}
             link={project.link}
-            image={project.image}
+            image={`../src/assets/${project.image}`}
           />
         ))}
       </Carousel>

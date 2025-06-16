@@ -57,34 +57,32 @@ interface IPortfolioData {
 
 export const portfolioData: IPortfolioData = {
   name: "Lucas Ferreira",
-  title: "Web Software Developer",
+  title: "Desenvolvedor de Software",
   email: "lucas.simoes.ferreira@gmail.com",
   phone: "+5553999384646",
   description:
     "Desenvolvedor Web com 3 anos de experiência em desenvolvimento front-end, especializado em React e Next.js. Atuei em empresa de grande escala, startup e até mesmo como único desenvolvedor de um projeto, tenho proatividade para resolver diversos tipos de problemas, além de uma comunicação ativa e fluente.",
   projects: [
     {
-      title: "E-commerce Completo (Front-end)",
+      title: "GoPA! Workflow",
       description:
-        "Desenvolvimento do front-end de uma plataforma de e-commerce responsiva com integração de APIs de pagamento e carrinho de compras.",
-      link: "https://www.ecommerce-exemplo.com",
-      image:
-        "https://via.placeholder.com/400x250/007bff/ffffff?text=E-commerce+Front",
+        "Sistema para preenchimento e gerenciamento de dados de saúde e atividade física para o Observatório Global de Atividade Física (GoPA!)",
+      link: "https://new.globalphysicalactivityobservatory.com/",
+      image: "gopa_cover.png",
     },
     {
-      title: "API de Gerenciamento de Tarefas",
+      title: "GoPE! Workflow",
       description:
-        "Criação de uma API RESTful robusta para gerenciar tarefas, usuários e autenticação, utilizando Node.js e MongoDB.",
-      link: "https://github.com/lucasferreira-dev/task-manager-api",
-      image: "https://via.placeholder.com/400x250/28a745/ffffff?text=API+Tasks",
+        "Sistema para preenchimento e gerenciamento de dados de saúde e atividade física para o Observatório Global de Educação Física (GoPE!)",
+      link: "https://www.linkedin.com/company/global-observatory-for-physical-education",
+      image: "gope_cover.png",
     },
     {
-      title: "Aplicativo Mobile de Saúde (MVP)",
+      title: "Enersmart",
       description:
-        "Desenvolvimento de um MVP de aplicativo mobile para monitoramento de saúde, focado na coleta e visualização de dados de bem-estar.",
-      link: "https://www.app-saude-mvp.com",
-      image:
-        "https://via.placeholder.com/400x250/ffc107/343a40?text=App+Mobile+Saúde",
+        "Ambiente integral de desenvolvimento, gestão e operação de projetos com armazenamento de energia em baterias",
+      link: "https://enersmart.com.br/",
+      image: "enersmart_cover.png",
     },
   ],
   workExperience: [
@@ -165,10 +163,6 @@ export const portfolioData: IPortfolioData = {
     {
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/ls-oferreira/",
-    },
-    {
-      name: "Instagram",
-      link: "https://www.instagram.com/ls_oferreira/",
     },
     {
       name: "Email",

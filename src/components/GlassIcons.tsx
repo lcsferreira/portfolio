@@ -15,8 +15,6 @@ export interface GlassIconsProps {
 
 // Mapeamento de cores com novos gradientes para as redes sociais
 const gradientMapping: Record<string, string> = {
-  instagram:
-    "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
   github: "linear-gradient(hsl(210, 10%, 25%), hsl(210, 10%, 15%))",
   linkedin: "linear-gradient(hsl(201, 89%, 40%), hsl(201, 89%, 30%))",
   email: "linear-gradient(hsl(223, 90%, 50%), hsl(208, 90%, 50%))",

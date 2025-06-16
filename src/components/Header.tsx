@@ -13,18 +13,36 @@ export const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   const headerOptions = [
     {
       label: "Sobre mim",
       href: "#about-me",
+      id: "about-me",
     },
     {
       label: "Projetos",
       href: "#projects",
+      id: "projects",
     },
     {
       label: "Contato",
       href: "#contact",
+      id: "contact",
     },
   ];
 
@@ -131,6 +149,7 @@ export const Header = () => {
               <a
                 href={option.href}
                 className="hover:text-primary transition-colors duration-300"
+                onClick={(e) => handleSmoothScroll(e, option.id)}
               >
                 {option.label}
               </a>
@@ -202,33 +221,20 @@ export const Header = () => {
           >
             <nav className="p-4">
               <ul className="flex flex-col gap-4 text-lg text-text-secondary">
-                <motion.li variants={mobileMenuItemVariants}>
-                  <a
-                    href="#"
-                    className="block py-2 hover:text-primary transition-colors duration-300"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                {headerOptions.map((option) => (
+                  <motion.li
+                    key={option.label}
+                    variants={mobileMenuItemVariants}
                   >
-                    About me
-                  </a>
-                </motion.li>
-                <motion.li variants={mobileMenuItemVariants}>
-                  <a
-                    href="#"
-                    className="block py-2 hover:text-primary transition-colors duration-300"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Projects
-                  </a>
-                </motion.li>
-                <motion.li variants={mobileMenuItemVariants}>
-                  <a
-                    href="#"
-                    className="block py-2 hover:text-primary transition-colors duration-300"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Contact
-                  </a>
-                </motion.li>
+                    <a
+                      href={option.href}
+                      className="block py-2 hover:text-primary transition-colors duration-300"
+                      onClick={(e) => handleSmoothScroll(e, option.id)}
+                    >
+                      {option.label}
+                    </a>
+                  </motion.li>
+                ))}
               </ul>
             </nav>
           </motion.div>
