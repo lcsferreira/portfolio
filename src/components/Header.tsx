@@ -3,45 +3,64 @@ import { Switch } from "./Switch";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTheme } from "../contexts/ThemeContext";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const isDarkMode = theme === "dark";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleSmoothScroll = (
+  const handleNavigation = (
     e: React.MouseEvent<HTMLAnchorElement>,
     targetId: string
   ) => {
     e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      setIsMobileMenuOpen(false);
+
+    if (!isHomePage) {
+      navigate("/");
+      // Aguarda a navegação ser concluída antes de tentar rolar
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     }
+    setIsMobileMenuOpen(false);
   };
 
   const headerOptions = [
     {
       label: "Sobre mim",
-      href: "#about-me",
+      href: "/#about-me",
       id: "about-me",
     },
     {
       label: "Projetos",
-      href: "#projects",
+      href: "/#projects",
       id: "projects",
     },
     {
       label: "Contato",
-      href: "#contact",
+      href: "/#contact",
       id: "contact",
     },
   ];
@@ -145,15 +164,14 @@ export const Header = () => {
       >
         <ul className="flex items-center gap-8 text-lg text-text-secondary">
           {headerOptions.map((option) => (
-            <li key={option.label}>
-              <a
-                href={option.href}
-                className="hover:text-primary transition-colors duration-300"
-                onClick={(e) => handleSmoothScroll(e, option.id)}
-              >
-                {option.label}
-              </a>
-            </li>
+            <a
+              key={option.label}
+              href={option.href}
+              className="hover:text-primary transition-colors duration-300"
+              onClick={(e) => handleNavigation(e, option.id)}
+            >
+              {option.label}
+            </a>
           ))}
         </ul>
       </motion.nav>
@@ -229,7 +247,7 @@ export const Header = () => {
                     <a
                       href={option.href}
                       className="block py-2 hover:text-primary transition-colors duration-300"
-                      onClick={(e) => handleSmoothScroll(e, option.id)}
+                      onClick={(e) => handleNavigation(e, option.id)}
                     >
                       {option.label}
                     </a>

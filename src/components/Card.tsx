@@ -1,5 +1,6 @@
 import NextPage from "../assets/NextPage.svg";
 import GlareHover from "./GlareHover";
+import { Link } from "react-router-dom";
 
 interface CardProps {
   title: string;
@@ -10,10 +11,8 @@ interface CardProps {
 
 export const Card = ({ title, description, image, link }: CardProps) => {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to={`/project/${encodeURIComponent(title)}`}
       className="block h-full text-white no-underline"
     >
       <GlareHover
@@ -45,13 +44,13 @@ export const Card = ({ title, description, image, link }: CardProps) => {
             </p>
           </div>
           <div className="mt-auto p-6 text-right flex justify-end items-center">
-            <span className="inline-flex items-center text-lg font-semibold">
+            <div className="inline-flex items-center text-lg font-semibold hover:text-primary transition-colors duration-300">
               Ver detalhes
               <img src={NextPage} alt="Arrow Right" className="w-6 h-6 ml-2" />
-            </span>
+            </div>
           </div>
         </div>
       </GlareHover>
-    </a>
+    </Link>
   );
 };

@@ -3,6 +3,12 @@ interface IProjectData {
   description: string;
   link: string;
   image: string;
+  longDescription?: string;
+  technologies?: string[];
+  features?: string[];
+  role?: string;
+  startDate?: string;
+  endDate?: string;
 }
 
 export interface IWorkExperience {
@@ -66,9 +72,32 @@ export const portfolioData: IPortfolioData = {
     {
       title: "GoPA! Workflow",
       description:
-        "Sistema para preenchimento e gerenciamento de dados de saúde e atividade física para o Observatório Global de Atividade Física (GoPA!)",
+        "Sistema para preenchimento e gerenciamento de dados de saúde e atividade física para o Observatório Global de Atividade Física (GoPA!).",
       link: "https://new.globalphysicalactivityobservatory.com/",
       image: "gopa_cover.png",
+      longDescription:
+        "O GoPA! Workflow é uma plataforma web desenvolvida para otimizar o fluxo de coleta, revisão e validação de dados científicos de atividade física de países ao redor do mundo. O sistema foi projetado para substituir um processo anterior baseado em planilhas e e-mails, introduzindo um ambiente centralizado e padronizado. A plataforma gerencia todo o ciclo de vida da criação dos 'Cards' de países, desde o cadastro inicial de contatos e o preenchimento de dados científicos, passando por múltiplas etapas de revisão e aprovação por administradores, até a validação final do design do card pelos contatos de cada país. Além disso, o sistema inclui um módulo de tradução e validação para adaptar o conteúdo para os idiomas locais, garantindo a precisão e a colaboração eficiente em escala global.",
+      technologies: [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "jQuery",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+      ],
+      features: [
+        "Gerenciamento de países e contatos com sistema de permissões.",
+        "Fluxo de trabalho multifásico (Coleta, Revisão, Validação e Tradução).",
+        "Formulários estruturados para submissão de dados científicos.",
+        "Sistema de notificação por e-mail para comunicação entre admins e contatos.",
+        "Dashboard administrativo para monitoramento do progresso de cada país.",
+        "Módulo de revisão com aprovação e solicitação de ajustes.",
+        "Funcionalidade de tradução e validação de conteúdo para múltiplos idiomas.",
+      ],
+      role: "Engenheiro de Software",
+      startDate: "Ago 2022",
+      endDate: "Ago 2023",
     },
     {
       title: "GoPE! Workflow",
@@ -76,6 +105,29 @@ export const portfolioData: IPortfolioData = {
         "Sistema para preenchimento e gerenciamento de dados de saúde e atividade física para o Observatório Global de Educação Física (GoPE!)",
       link: "https://www.linkedin.com/company/global-observatory-for-physical-education",
       image: "gope_cover.png",
+      longDescription:
+        "O GoPE! Workflow é uma plataforma web desenvolvida para otimizar o fluxo de coleta, revisão e validação de dados científicos de atividade física de países ao redor do mundo. A plataforma gerencia todo o ciclo de vida da criação dos 'Cards' de países, desde o cadastro inicial de contatos e o preenchimento de dados científicos, passando por múltiplas etapas de revisão e aprovação por administradores, até a validação final do design do card pelos contatos de cada país. Além disso, o sistema inclui um módulo de tradução e validação para adaptar o conteúdo para os idiomas locais, garantindo a precisão e a colaboração eficiente em escala global.",
+      technologies: [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "jQuery",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+      ],
+      features: [
+        "Gerenciamento de países e contatos com sistema de permissões.",
+        "Fluxo de trabalho multifásico (Coleta, Revisão, Validação e Tradução).",
+        "Formulários estruturados para submissão de dados científicos.",
+        "Sistema de notificação por e-mail para comunicação entre admins e contatos.",
+        "Dashboard administrativo para monitoramento do progresso de cada país.",
+        "Módulo de revisão com aprovação e solicitação de ajustes.",
+        "Funcionalidade de tradução e validação de conteúdo para múltiplos idiomas.",
+      ],
+      role: "Engenheiro de Software",
+      startDate: "Jan 2024",
+      endDate: "Dez 2024",
     },
     {
       title: "Enersmart",
@@ -83,6 +135,27 @@ export const portfolioData: IPortfolioData = {
         "Ambiente integral de desenvolvimento, gestão e operação de projetos com armazenamento de energia em baterias",
       link: "https://enersmart.com.br/",
       image: "enersmart_cover.png",
+      longDescription:
+        "O Enersmart é uma plataforma web desenvolvida para a NewCharge Energy, que permite o desenvolvimento, gestão e operação de projetos com armazenamento de energia em baterias. O sistema foi desenvolvido para facilitar o gerenciamento de projetos de energia, permitindo que os usuários possam acompanhar e controlar diferentes aspectos dos projetos, desde a concepção até a operação.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Material UI",
+        "AWS",
+        "Serverless",
+        "WebSocket",
+      ],
+      features: [
+        "Dashboard em tempo real com dados de consumo e geração de energia",
+        "Sistema de gerenciamento de projetos",
+        "Monitoramento de baterias e equipamentos",
+        "Integração com APIs de terceiros",
+        "Sistema de notificações e alertas",
+      ],
+      role: "Desenvolvedor Front-end",
+      startDate: "Mar 2024",
+      endDate: "Atual",
     },
   ],
   workExperience: [
