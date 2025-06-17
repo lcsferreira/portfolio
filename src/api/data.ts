@@ -9,6 +9,7 @@ interface IProjectData {
   role?: string;
   startDate?: string;
   endDate?: string;
+  screenshots?: string[];
 }
 
 export interface IWorkExperience {
@@ -74,7 +75,17 @@ export const portfolioData: IPortfolioData = {
       description:
         "Sistema para preenchimento e gerenciamento de dados de saúde e atividade física para o Observatório Global de Atividade Física (GoPA!).",
       link: "https://new.globalphysicalactivityobservatory.com/",
-      image: "gopa_cover.png",
+      image: "/projects/gopa/gopa_cover.png",
+      screenshots: [
+        "/projects/gopa/gopa_cover.png",
+        "/projects/gopa/card.png",
+        "/projects/gopa/dashboard.png",
+        "/projects/gopa/dashboard_2.png",
+        "/projects/gopa/edit_country.png",
+        "/projects/gopa/indicators.png",
+        "/projects/gopa/progress.png",
+        "/projects/gopa/translation.png",
+      ],
       longDescription:
         "O GoPA! Workflow é uma plataforma web desenvolvida para otimizar o fluxo de coleta, revisão e validação de dados científicos de atividade física de países ao redor do mundo. O sistema foi projetado para substituir um processo anterior baseado em planilhas e e-mails, introduzindo um ambiente centralizado e padronizado. A plataforma gerencia todo o ciclo de vida da criação dos 'Cards' de países, desde o cadastro inicial de contatos e o preenchimento de dados científicos, passando por múltiplas etapas de revisão e aprovação por administradores, até a validação final do design do card pelos contatos de cada país. Além disso, o sistema inclui um módulo de tradução e validação para adaptar o conteúdo para os idiomas locais, garantindo a precisão e a colaboração eficiente em escala global.",
       technologies: [
@@ -104,7 +115,17 @@ export const portfolioData: IPortfolioData = {
       description:
         "Sistema para preenchimento e gerenciamento de dados de saúde e atividade física para o Observatório Global de Educação Física (GoPE!)",
       link: "https://www.linkedin.com/company/global-observatory-for-physical-education",
-      image: "gope_cover.png",
+      image: "/projects/gope/gope_cover.png",
+      screenshots: [
+        "/projects/gope/gope_cover.png",
+        "/projects/gope/card.png",
+        "/projects/gope/dashboard.png",
+        "/projects/gope/dashboard_2.png",
+        "/projects/gope/edit_country.png",
+        "/projects/gope/indicators.png",
+        "/projects/gope/progress.png",
+        "/projects/gope/translation.png",
+      ],
       longDescription:
         "O GoPE! Workflow é uma plataforma web desenvolvida para otimizar o fluxo de coleta, revisão e validação de dados científicos de atividade física de países ao redor do mundo. A plataforma gerencia todo o ciclo de vida da criação dos 'Cards' de países, desde o cadastro inicial de contatos e o preenchimento de dados científicos, passando por múltiplas etapas de revisão e aprovação por administradores, até a validação final do design do card pelos contatos de cada país. Além disso, o sistema inclui um módulo de tradução e validação para adaptar o conteúdo para os idiomas locais, garantindo a precisão e a colaboração eficiente em escala global.",
       technologies: [
@@ -134,7 +155,8 @@ export const portfolioData: IPortfolioData = {
       description:
         "Plataforma integrada para dimensionamento, gestão e operação de projetos com armazenamento de energia em baterias (BESS).",
       link: "https://enersmart.com.br/",
-      image: "enersmart_cover.png",
+      image: "/projects/enersmart/enersmart_cover.png",
+      screenshots: ["/projects/enersmart/enersmart_cover.png"],
       longDescription:
         "O EnerSmart é um ecossistema de software desenvolvido pela NewCharge para abranger todo o pipeline de projetos com sistemas de armazenamento. A plataforma é dividida em duas frentes principais: Ferramentas de Dimensionamento (On-Grid e Off-Grid) e um Sistema de Gestão de Energia (EMS). As ferramentas de dimensionamento utilizam algoritmos de computação evolucionária e simulação horária para otimizar o investimento e o retorno financeiro, seja para reduzir a conta de energia em sistemas conectados à rede ou para garantir a melhor combinação de solar, baterias e diesel em sistemas isolados. O EMS, por sua vez, é a solução de monitoramento e controle em tempo real que toma decisões inteligentes sobre carga/descarga das baterias, uso da rede ou geradores, e implementa estratégias como peak-shaving e load-shifting para maximizar a eficiência e a economia na fase de operação.",
       technologies: [

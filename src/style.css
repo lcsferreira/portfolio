@@ -112,3 +112,51 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Estilização customizada do scrollbar das thumbnails */
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(64, 96, 221, 0.3) transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: rgba(64, 96, 221, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: rgba(64, 96, 221, 0.5);
+}
+
+/* Tema dark para o scrollbar */
+.dark .scrollbar-custom {
+  scrollbar-color: rgba(64, 96, 221, 0.4) transparent;
+}
+
+.dark .scrollbar-custom::-webkit-scrollbar-thumb {
+  background: rgba(64, 96, 221, 0.4);
+}
+
+.dark .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: rgba(64, 96, 221, 0.6);
+}
+
+/* Animação suave para o scrollbar */
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:active {
+  background: rgba(64, 96, 221, 0.7);
+  transform: scaleY(1.1);
+}
