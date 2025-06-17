@@ -284,14 +284,14 @@ export const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed top-15 left-0 right-16 lg:hidden bg-glass-bg backdrop-blur-md rounded-b-md mx-4 mt-2 border-t border-primary/20 z-10"
+            className="fixed top-15 left-0 right-16 lg:hidden bg-glass-bg backdrop-blur-md rounded-md mx-4 mt-2 border border-primary/20 z-10 bg-gray-900/50 dark:bg-amber-50/10 dark:border-primary/20"
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
             <nav className="p-4">
-              <ul className="flex flex-col gap-4 text-lg text-theme-secondary">
+              <ul className="flex flex-col gap-4 text-lg text-gray-700 dark:text-gray-300">
                 {headerOptions.map((option) => (
                   <motion.li
                     key={option.label}
@@ -299,7 +299,7 @@ export const Header = () => {
                   >
                     <a
                       href={option.href}
-                      className="block py-2 hover:text-primary transition-colors duration-300"
+                      className="block py-2 hover:text-primary transition-colors duration-300 text-white"
                       onClick={(e) => handleNavigation(e, option.id)}
                     >
                       {option.label}
