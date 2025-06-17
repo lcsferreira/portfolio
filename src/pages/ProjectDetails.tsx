@@ -5,7 +5,13 @@ import { useTheme } from "../contexts/ThemeContext";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import ChipCard from "../components/ChipCard";
-import { FaArrowLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaChevronLeft,
+  FaChevronRight,
+  FaCheckCircle,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 export const ProjectDetails = () => {
@@ -185,13 +191,30 @@ export const ProjectDetails = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="flex flex-col gap-4">
-              <h2 className="text-2xl font-semibold text-text-secondary">
-                Descrição
-              </h2>
-              <p className="text-lg text-text-secondary leading-relaxed">
-                {project.longDescription || project.description}
-              </p>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                <div className="flex-1">
+                  <h2 className="text-2xl font-semibold text-text-secondary mb-4">
+                    Descrição
+                  </h2>
+                  <p className="text-lg text-text-secondary leading-relaxed">
+                    {project.longDescription || project.description}
+                  </p>
+                </div>
+
+                {/* Botão Visitar Projeto - Posicionado ao lado da descrição */}
+                <div className="flex flex-col sm:flex-shrink-0 sm:ml-8">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary/80 text-white px-6 py-3 rounded-xl hover:from-primary/90 hover:to-primary/70 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-medium"
+                  >
+                    <FaExternalLinkAlt size={16} />
+                    Visitar Projeto
+                  </a>
+                </div>
+              </div>
             </div>
 
             {project.technologies && (
@@ -208,33 +231,39 @@ export const ProjectDetails = () => {
             )}
 
             {project.features && (
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-6">
                 <h2 className="text-2xl font-semibold text-text-secondary">
-                  Funcionalidades
+                  Funcionalidades Principais
                 </h2>
-                <ul className="list-disc list-inside text-lg text-text-secondary space-y-2">
-                  {project.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {project.features.map((feature, index) => (
+                    <motion.div
+                      key={feature}
+                      className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-800/50 dark:to-gray-900/50 p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/30"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                    >
+                      {/* Ícone animado */}
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <FaCheckCircle className="text-primary text-lg group-hover:rotate-12 transition-transform duration-300" />
+                        </div>
+
+                        <div className="flex-1">
+                          <p className="text-text-secondary leading-relaxed font-medium">
+                            {feature}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Efeito de brilho no hover */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
+                    </motion.div>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
-
-            <motion.div
-              initial={{ opacity: 0.8, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
-              className="flex gap-4"
-            >
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition-colors duration-300"
-              >
-                Visitar Projeto
-              </a>
-            </motion.div>
           </motion.div>
         </div>
       </div>
