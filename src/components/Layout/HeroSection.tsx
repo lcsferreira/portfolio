@@ -1,14 +1,17 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Lucas from "../../assets/profileImage.jpg";
+import LucasLight from "../../assets/profileImageLight.png";
 // import Group from "../../assets/Group.svg";
 import { useRef } from "react";
 import { portfolioData } from "../../api/data";
 import { FaHand } from "react-icons/fa6";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { useTheme } from "../../contexts/ThemeContext";
 
 export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
+  const { theme } = useTheme();
 
   const { name } = portfolioData;
 
@@ -109,21 +112,31 @@ export const HeroSection = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full max-w-7xl mx-auto gap-8 lg:gap-12">
         {/* Image - Mobile First, Desktop First */}
         <motion.div
-          className="flex-shrink-0"
+          className="flex-shrink-0 relative"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
         >
-          <img
-            src={Lucas}
-            alt="Lucas Ferreira"
-            className="
-              w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[500px] xl:w-[450px] xl:h-[550px]
-              object-cover rounded-b-full object-top
-              shadow-2xl shadow-primary/20 dark:shadow-primary/10
-              border-4 border-white/10 dark:border-white/5
-            "
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={theme}
+              src={theme === "light" ? LucasLight : Lucas}
+              alt="Lucas Ferreira"
+              className="
+                w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[500px] xl:w-[450px] xl:h-[550px]
+                object-cover rounded-b-full object-top
+                shadow-2xl shadow-primary/20 dark:shadow-primary/10
+                border-4 border-white/10 dark:border-white/5
+              "
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{
+                duration: 0.2,
+                ease: "easeInOut",
+              }}
+            />
+          </AnimatePresence>
         </motion.div>
         {/* Content - Mobile First, Desktop Second */}
         <motion.div
@@ -173,7 +186,7 @@ export const HeroSection = () => {
               whileHover="hover"
               onClick={handleDownloadCV}
             >
-              Download CV
+              {t("hero.downloadCV")}
             </motion.button>
           </motion.div>
         </motion.div>

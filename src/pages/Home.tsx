@@ -43,7 +43,7 @@ export const Home = () => {
     <motion.main
       className={`${
         theme === "dark" ? "dark" : ""
-      } flex flex-col min-h-screen text-text font-family overflow-hidden bg-[#e8e6f5] dark:bg-[#1e1e1e]`}
+      } flex flex-col min-h-screen text-text font-family overflow-hidden bg-[#e8e6f5] dark:bg-[#1e1e1e] z-10`}
       variants={containerVariants}
       initial="hidden"
       animate="visible"

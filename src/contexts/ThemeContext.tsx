@@ -43,7 +43,21 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    // Verificar se o navegador suporta View Transitions API
+    if (
+      typeof window !== "undefined" &&
+      document &&
+      "startViewTransition" in document &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      // Usar View Transition API para transição suave
+      (document as any).startViewTransition(() => {
+        setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+      });
+    } else {
+      // Fallback para navegadores que não suportam ou usuários que preferem movimento reduzido
+      setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    }
   };
 
   return (

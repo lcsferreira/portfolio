@@ -59,7 +59,7 @@ export const AboutMeSection = () => {
           </div>
         </div>
         <ScrollReveal
-          textClassName="text-2xl max-w-4xl text-center lg:text-left text-theme-secondary"
+          textClassName="text-xl lg:text-2xl max-w-4xl text-center lg:text-left text-theme-secondary"
           baseOpacity={0.3}
           enableBlur={true}
           baseRotation={0}

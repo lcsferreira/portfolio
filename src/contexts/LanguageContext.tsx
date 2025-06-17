@@ -28,6 +28,7 @@ const translations = {
       "Especializado em criar soluções digitais inovadoras com foco em experiência do usuário e performance.",
     "hero.cta": "Ver Projetos",
     "hero.contact": "Entre em Contato",
+    "hero.downloadCV": "Baixar CV",
 
     // About Section
     "about.title": "Sobre Mim",
@@ -97,6 +98,7 @@ const translations = {
       "Specialized in creating innovative digital solutions focused on user experience and performance.",
     "hero.cta": "View Projects",
     "hero.contact": "Get In Touch",
+    "hero.downloadCV": "Download Resume",
 
     // About Section
     "about.title": "About Me",

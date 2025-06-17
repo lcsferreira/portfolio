@@ -56,7 +56,7 @@ export const ProjectDetails = () => {
     <motion.main
       className={`${
         theme === "dark" ? "dark" : ""
-      } flex flex-col min-h-screen text-text font-family overflow-hidden bg-[#e8e6f5] dark:bg-[#1e1e1e]`}
+      } flex flex-col min-h-screen text-text font-family overflow-hidden bg-[#e8e6f5] dark:bg-[#1e1e1e] z-10`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -72,7 +72,7 @@ export const ProjectDetails = () => {
           >
             <Link
               to="/"
-              className="hover:text-primary transition-colors duration-300 flex items-center gap-2"
+              className="transition-colors duration-300 flex items-center gap-2 text-theme-secondary"
             >
               <FaArrowLeft />
               {t("projectDetails.back")}

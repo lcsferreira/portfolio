@@ -99,7 +99,7 @@ export const Carousel = ({
   }
 
   return (
-    <div className="relative w-full ">
+    <div className="relative w-full overflow-hidden">
       {/* This div is the one that will be transformed */}
       <div
         ref={carouselRef}
@@ -144,28 +144,33 @@ export const Carousel = ({
           <>
             <button
               onClick={goToPrevious}
-              className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-1 sm:p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-20"
+              className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-gray-500/60 dark:bg-white/30 hover:bg-gray-500/80 hover:dark:bg-white/60 rounded-full p-1 sm:p-2 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-40 backdrop-blur-md"
               aria-label="Previous slide"
             >
               <img
                 src={ArrowLeft}
                 alt="Arrow Left"
-                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-theme-secondary"
+                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-gray-700 dark:text-gray-200"
               />
             </button>
             <button
               onClick={goToNext}
-              className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-1 sm:p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-20"
+              className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-gray-500/60 dark:bg-white/30 hover:bg-gray-500/80 hover:dark:bg-white/60 rounded-full p-1 sm:p-2 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-40 backdrop-blur-md"
               aria-label="Next slide"
             >
               <img
                 src={ArrowRight}
                 alt="Arrow Right"
-                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-theme-secondary"
+                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-gray-700 dark:text-gray-200"
               />
             </button>
           </>
         )}
+
+      {/* Gradient shadows on the sides - placed after arrows to avoid z-index conflicts */}
+      <div className="absolute inset-y-0 left-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-r from-[#e8e6f5] dark:from-[#1e1e1e] to-transparent z-30 pointer-events-none"></div>
+      <div className="absolute inset-y-0 right-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-l from-[#e8e6f5] dark:from-[#1e1e1e] to-transparent z-30 pointer-events-none"></div>
+
       {showDots && totalItems > 1 && (
         <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex space-x-2">
           {Array.from({ length: totalItems }).map((_, dotIndex) => (

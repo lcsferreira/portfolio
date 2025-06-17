@@ -152,7 +152,14 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
     }
 
     return (
-      <div className={`${parallaxClassName} relative`} style={parallaxStyle}>
+      <div
+        className={`${parallaxClassName} relative overflow-hidden`}
+        style={parallaxStyle}
+      >
+        {/* Gradient shadows on the sides */}
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-r from-[#e8e6f5] dark:from-[#1e1e1e] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-l from-[#e8e6f5] dark:from-[#1e1e1e] to-transparent z-10 pointer-events-none"></div>
+
         <motion.div
           className={`${scrollerClassName} flex whitespace-nowrap text-center font-sans text-md font-bold tracking-[-0.02em] drop-shadow md:text-[1rem] md:leading-[1rem]`}
           style={{ x, ...scrollerStyle }}

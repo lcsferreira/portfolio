@@ -36,26 +36,27 @@ export const Header = () => {
   ) => {
     e.preventDefault();
 
+    const scrollToElement = (elementId: string) => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        const elementPosition = element.offsetTop;
+        const offsetPosition = elementPosition - 100; // Overhead de 100px
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    };
+
     if (!isHomePage) {
       navigate("/");
       // Aguarda a navegação ser concluída antes de tentar rolar
       setTimeout(() => {
-        const element = document.getElementById(targetId);
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
+        scrollToElement(targetId);
       }, 100);
     } else {
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      scrollToElement(targetId);
     }
     setIsMobileMenuOpen(false);
   };
@@ -165,7 +166,7 @@ export const Header = () => {
 
   return (
     <motion.header
-      className="flex justify-between items-center p-4 sm:p-6 z-50 relative"
+      className="flex justify-between items-center p-4 sm:p-6 z-50 relative max-w-[1440px] w-full self-center"
       variants={headerVariants}
       initial="hidden"
       animate="visible"
