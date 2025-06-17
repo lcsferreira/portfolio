@@ -38,24 +38,28 @@ export const AboutMeSection = () => {
       <div className="flex justify-center items-center flex-col gap-10">
         <div className="mt-10 flex w-full justify-center">
           <div className="flex justify-end w-[200px] flex-col items-end p-2">
-            <p>{translatedData.graduation}</p>
-            <p>{translatedData.university}</p>
+            <p className="text-theme-secondary">{translatedData.graduation}</p>
+            <p className="text-theme-secondary">{translatedData.university}</p>
           </div>
 
           <div className="w-[3px] bg-secondary mx-2" />
 
           <div className="flex items-center gap-2 p-2 w-[200px] ">
-            <p className="text-5xl font-bold">
+            <p className="text-5xl font-bold text-theme-primary">
               {translatedData.devInfos.yearsOfExperience}
             </p>
             <div className="flex flex-col">
-              <p className="font-light">{t("about.yearsOf")}</p>
-              <p className="text-xl">{t("about.experience")}</p>
+              <p className="font-light text-theme-secondary">
+                {t("about.yearsOf")}
+              </p>
+              <p className="text-xl text-theme-primary">
+                {t("about.experience")}
+              </p>
             </div>
           </div>
         </div>
         <ScrollReveal
-          textClassName="text-2xl max-w-4xl text-center lg:text-left"
+          textClassName="text-2xl max-w-4xl text-center lg:text-left text-theme-secondary"
           baseOpacity={0.3}
           enableBlur={true}
           baseRotation={0}

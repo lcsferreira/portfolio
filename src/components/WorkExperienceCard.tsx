@@ -24,8 +24,8 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
 
   return (
     <motion.div
-      className={`p-4 bg-gray-800/50 backdrop-blur-md rounded-2xl border border-white/20 transition-all duration-300 ${
-        isSelected ? "bg-gray-800/100 border-primary/40" : ""
+      className={`p-4 bg-white/90 dark:bg-gray-800/50 backdrop-blur-md rounded-2xl border border-gray-200 dark:border-white/20 transition-all duration-300 ${
+        isSelected ? "bg-white dark:bg-gray-800/100 border-primary/40" : ""
       }`}
       onMouseEnter={onMouseEnter}
       onClick={onClick}
@@ -33,7 +33,7 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
     >
       <div className="flex flex-row justify-between items-start">
         <div className="flex flex-col flex-1">
-          <h3 className="text-white text-lg font-semibold m-0 mb-1">
+          <h3 className="text-gray-800 dark:text-white text-lg font-semibold m-0 mb-1">
             {workExperience.role}
           </h3>
           <a
@@ -51,13 +51,13 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
             {workExperience.technologiesUsed.slice(0, 4).map((tech, index) => (
               <span
                 key={index}
-                className="px-2 py-1 bg-primary/20 text-white text-xs rounded-full border border-primary/30"
+                className="px-2 py-1 bg-primary/20 text-primary dark:text-white text-xs rounded-full border border-primary/30"
               >
                 {tech}
               </span>
             ))}
             {workExperience.technologiesUsed.length > 4 && (
-              <span className="px-2 py-1 bg-gray-600/50 text-gray-300 text-xs rounded-full">
+              <span className="px-2 py-1 bg-gray-200 dark:bg-gray-600/50 text-gray-600 dark:text-gray-300 text-xs rounded-full">
                 +{workExperience.technologiesUsed.length - 4}
               </span>
             )}
@@ -65,7 +65,7 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
         </div>
 
         <div className="flex flex-col items-end">
-          <p className="text-gray-400 text-sm m-0 mb-2">
+          <p className="text-gray-600 dark:text-gray-400 text-sm m-0 mb-2">
             {workExperience.startDate} - {workExperience.endDate}
           </p>
 
@@ -106,8 +106,8 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-4 border-t border-white/10">
-              <h4 className="text-white text-sm font-semibold mb-3">
+            <div className="pt-4 border-t border-gray-200 dark:border-white/10">
+              <h4 className="text-gray-800 dark:text-white text-sm font-semibold mb-3">
                 Principais Responsabilidades:
               </h4>
               <ul className="space-y-2">
@@ -118,7 +118,7 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="text-gray-300 text-sm flex items-start"
+                      className="text-gray-600 dark:text-gray-300 text-sm flex items-start"
                     >
                       <span className="text-primary mr-2 flex-shrink-0 mt-1">
                         •
@@ -132,14 +132,14 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
               {/* Todas as tecnologias quando expandido */}
               {workExperience.technologiesUsed.length > 4 && (
                 <div className="mt-4">
-                  <h5 className="text-white text-sm font-semibold mb-2">
+                  <h5 className="text-gray-800 dark:text-white text-sm font-semibold mb-2">
                     Tecnologias Utilizadas:
                   </h5>
                   <div className="flex flex-wrap gap-1">
                     {workExperience.technologiesUsed.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 bg-primary/20 text-white text-xs rounded-full border border-primary/30"
+                        className="px-2 py-1 bg-primary/20 text-primary dark:text-white text-xs rounded-full border border-primary/30"
                       >
                         {tech}
                       </span>

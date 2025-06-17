@@ -179,11 +179,13 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
           >
             {typeof item === "string" ? (
               <div
-                className={`p-4 bg-gray-800/50 backdrop-blur-md rounded-2xl border border-white/20 ${
-                  selectedIndex === index ? "bg-gray-800/100" : ""
+                className={`p-4 bg-white/90 dark:bg-gray-800/50 backdrop-blur-md rounded-2xl border border-gray-200 dark:border-white/20 ${
+                  selectedIndex === index
+                    ? "bg-white dark:bg-gray-800/100 border-primary/30"
+                    : ""
                 } ${itemClassName}`}
               >
-                <p className="text-white m-0">{item}</p>
+                <p className="text-gray-800 dark:text-white m-0">{item}</p>
               </div>
             ) : (
               <WorkExperienceCard
@@ -204,11 +206,11 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
       {showGradients && (
         <>
           <div
-            className="absolute top-0 left-0 right-0 h-[50px] bg-gradient-to-b from-[#1e1e1e] to-transparent pointer-events-none transition-opacity duration-300 ease"
+            className="absolute top-0 left-0 right-0 h-[50px] bg-gradient-to-b from-[#e8e6f5] dark:from-[#1e1e1e] to-transparent pointer-events-none transition-opacity duration-300 ease"
             style={{ opacity: topGradientOpacity }}
           ></div>
           <div
-            className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-t from-[#1e1e1e] to-transparent pointer-events-none transition-opacity duration-300 ease"
+            className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-t from-[#e8e6f5] dark:from-[#1e1e1e] to-transparent pointer-events-none transition-opacity duration-300 ease"
             style={{ opacity: bottomGradientOpacity }}
           ></div>
         </>

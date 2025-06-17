@@ -50,7 +50,7 @@ const LanguageSelector: React.FC = () => {
       >
         <FaGlobe
           className={`
-            text-white text-xl 
+            text-gray-800 dark:text-white text-xl 
             transition-transform duration-300
             ${isOpen ? "scale-125" : "scale-100"}
           `}
@@ -91,12 +91,12 @@ const LanguageSelector: React.FC = () => {
               rounded-xl shadow-lg hover:shadow-xl
               transition-all duration-300 ease-out
               transform hover:scale-110 active:scale-95
-              border-2 font-bold text-sm hover:cursor-pointer
+               font-bold text-sm hover:cursor-pointer
               backdrop-blur-sm
               ${
                 language === "pt"
-                  ? "bg-gradient-to-br from-secondary to-primary/80 text-white border-white/30"
-                  : "bg-white/90 hover:bg-white text-gray-700 border-gray-200 hover:border-gray-300"
+                  ? "bg-gradient-to-br from-secondary to-primary/80 text-white"
+                  : "bg-white/90 hover:bg-white text-gray-700"
               }
             `}
           >
@@ -126,12 +126,12 @@ const LanguageSelector: React.FC = () => {
               rounded-xl shadow-lg hover:shadow-xl
               transition-all duration-300 ease-out
               transform hover:scale-110 active:scale-95
-              border-2 font-bold text-sm hover:cursor-pointer
+               font-bold text-sm hover:cursor-pointer
               backdrop-blur-sm
               ${
                 language === "en"
-                  ? "bg-gradient-to-br from-secondary to-primary/80 text-white border-white/30"
-                  : "bg-white/90 hover:bg-white text-gray-700 border-gray-200 hover:border-gray-300"
+                  ? "bg-gradient-to-br from-secondary to-primary/80 text-white"
+                  : "bg-white/90 hover:bg-white text-gray-700"
               }
             `}
           >

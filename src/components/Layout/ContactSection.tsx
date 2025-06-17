@@ -41,14 +41,17 @@ export const ContactSection = () => {
 
   return (
     <section className="flex flex-col gap-6 md:gap-10 pb-10 px-4 md:px-0">
-      <h2 className="self-center text-2xl md:text-3xl text-text-secondary">
+      <h2 className="self-center text-2xl md:text-3xl text-theme-primary">
         {t("contact.title")}
       </h2>
       <div className="flex flex-col lg:flex-row w-full justify-between gap-6 lg:gap-10">
         <div className="flex flex-col gap-6 lg:gap-10 w-full lg:w-1/2">
           <div className="flex gap-4 w-full flex-col rounded-lg px-2 md:px-4">
             <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="text-sm md:text-base">
+              <label
+                htmlFor="name"
+                className="text-sm md:text-base text-theme-secondary"
+              >
                 {t("contact.name")}
               </label>
               <Input
@@ -58,7 +61,10 @@ export const ContactSection = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="text-sm md:text-base">
+              <label
+                htmlFor="message"
+                className="text-sm md:text-base text-theme-secondary"
+              >
                 {t("contact.message")}
               </label>
               <Input
@@ -86,7 +92,7 @@ export const ContactSection = () => {
           >
             {t("contact.workTogether")}
           </AnimatedShinyText>
-          <p className="text-text-secondary text-sm md:text-base text-center lg:text-left">
+          <p className="text-theme-secondary text-sm md:text-base text-center lg:text-left">
             {t("contact.available")}
           </p>
           <div className="flex justify-center lg:justify-start">

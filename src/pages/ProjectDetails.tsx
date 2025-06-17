@@ -56,7 +56,7 @@ export const ProjectDetails = () => {
     <motion.main
       className={`${
         theme === "dark" ? "dark" : ""
-      } flex flex-col min-h-screen text-text font-family overflow-hidden bg-[#f9f8ff] dark:bg-[#1e1e1e]`}
+      } flex flex-col min-h-screen text-text font-family overflow-hidden bg-[#e8e6f5] dark:bg-[#1e1e1e]`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -79,7 +79,7 @@ export const ProjectDetails = () => {
             </Link>
             <h1 className="text-4xl font-bold text-primary">{project.title}</h1>
             {project.role && project.startDate && project.endDate && (
-              <div className="flex items-center gap-2 text-text-secondary">
+              <div className="flex items-center gap-2 text-theme-secondary">
                 <span>{project.role}</span>
                 <span>•</span>
                 <span>
@@ -137,7 +137,7 @@ export const ProjectDetails = () => {
                 )}
 
                 {/* Contador */}
-                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {currentScreenshot + 1} {t("projectDetails.counter")}{" "}
                   {project.screenshots.length}
                 </div>
@@ -178,7 +178,7 @@ export const ProjectDetails = () => {
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
                         index === currentScreenshot
                           ? "bg-primary scale-125"
-                          : "bg-text-secondary/30 hover:bg-text-secondary/60"
+                          : "bg-gray-400/30 hover:bg-gray-400/60 dark:bg-gray-600/30 dark:hover:bg-gray-600/60"
                       }`}
                       aria-label={`${t("projectDetails.goToScreenshot")} ${
                         index + 1
@@ -199,10 +199,10 @@ export const ProjectDetails = () => {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
-                  <h2 className="text-2xl font-semibold text-text-secondary mb-4">
+                  <h2 className="text-2xl font-semibold text-theme-primary mb-4">
                     {t("projectDetails.description")}
                   </h2>
-                  <p className="text-lg text-text-secondary leading-relaxed">
+                  <p className="text-lg text-theme-secondary leading-relaxed">
                     {project.longDescription || project.description}
                   </p>
                 </div>
@@ -224,7 +224,7 @@ export const ProjectDetails = () => {
 
             {project.technologies && (
               <div className="flex flex-col gap-4">
-                <h2 className="text-2xl font-semibold text-text-secondary">
+                <h2 className="text-2xl font-semibold text-theme-primary">
                   {t("projectDetails.technologies")}
                 </h2>
                 <div className="flex flex-wrap gap-2">
@@ -237,7 +237,7 @@ export const ProjectDetails = () => {
 
             {project.features && (
               <div className="flex flex-col gap-6">
-                <h2 className="text-2xl font-semibold text-text-secondary">
+                <h2 className="text-2xl font-semibold text-theme-primary">
                   {t("projectDetails.features")}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -256,7 +256,7 @@ export const ProjectDetails = () => {
                         </div>
 
                         <div className="flex-1">
-                          <p className="text-text-secondary leading-relaxed font-medium">
+                          <p className="text-theme-secondary leading-relaxed font-medium">
                             {feature}
                           </p>
                         </div>

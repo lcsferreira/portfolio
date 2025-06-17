@@ -132,7 +132,7 @@ export const HeroSection = () => {
         >
           <div className="space-y-4">
             <motion.div
-              className="text-primary dark:text-text-secondary text-lg sm:text-xl md:text-2xl flex flex-row items-center justify-center lg:justify-start gap-2"
+              className="text-primary dark:text-gray-300 text-lg sm:text-xl md:text-2xl flex flex-row items-center justify-center lg:justify-start gap-2"
               variants={nameVariants}
             >
               <motion.span
@@ -152,7 +152,7 @@ export const HeroSection = () => {
             </motion.h1>
 
             <motion.p
-              className="text-primary dark:text-text-secondary text-lg sm:text-xl md:text-2xl lg:text-3xl"
+              className="text-primary dark:text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}

@@ -3,13 +3,23 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* Light Mode Colors */
+  --color-light-bg: #e8e6f5;
+  --color-light-text: #1f1f1f;
+  --color-light-text-secondary: #2d2d2d;
+  --color-light-glass-bg: rgba(255, 255, 255, 0.7);
+  --color-light-card-bg: rgba(255, 255, 255, 0.9);
+
+  /* Dark Mode Colors */
   --color-dark-bg: #1e1e1e;
-  --color-text: #fff;
-  --color-text-secondary: #fafafa;
+  --color-dark-text: #fff;
+  --color-dark-text-secondary: #fafafa;
+  --color-dark-glass-bg: rgba(11, 13, 32, 0.5);
+  --color-dark-card-bg: rgba(17, 19, 38, 0.6);
+
+  /* Common Colors */
   --color-primary: #4060dd;
   --color-secondary: #273e9c;
-  --color-glass-bg: rgba(11, 13, 32, 0.5);
-  --color-glass-bg-white: rgba(255, 255, 255, 0.3);
   --font-family: "Quicksand", sans-serif;
 }
 
@@ -159,4 +169,46 @@ body {
 .scrollbar-custom::-webkit-scrollbar-thumb:active {
   background: rgba(64, 96, 221, 0.7);
   transform: scaleY(1.1);
+}
+
+/* Classes utilitárias para temas */
+.theme-text {
+  @apply text-gray-800 dark:text-white;
+}
+
+.theme-text-secondary {
+  @apply text-gray-600 dark:text-gray-300;
+}
+
+.theme-bg-card {
+  @apply bg-white/90 dark:bg-gray-800/50;
+}
+
+.theme-border {
+  @apply border-gray-200 dark:border-white/20;
+}
+
+.theme-glass {
+  @apply backdrop-blur-md;
+}
+
+/* Classes de texto que respondem ao tema */
+.text-theme-primary {
+  @apply text-gray-800 dark:text-white;
+}
+
+.text-theme-secondary {
+  @apply text-gray-600 dark:text-gray-300;
+}
+
+.text-theme-muted {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+/* Melhorias no glassmorphism para light mode */
+.glass-light {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(200, 200, 200, 0.3);
 }

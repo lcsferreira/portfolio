@@ -150,7 +150,7 @@ export const Carousel = ({
               <img
                 src={ArrowLeft}
                 alt="Arrow Left"
-                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-text-secondary"
+                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-theme-secondary"
               />
             </button>
             <button
@@ -161,7 +161,7 @@ export const Carousel = ({
               <img
                 src={ArrowRight}
                 alt="Arrow Right"
-                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-text-secondary"
+                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-theme-secondary"
               />
             </button>
           </>

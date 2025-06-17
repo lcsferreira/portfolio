@@ -50,7 +50,7 @@ export const WorkExperienceSection = () => {
             >
               {t("experience.title")}
             </AnimatedShinyText>
-            <p className="text-text-secondary text-base sm:text-lg font-light text-center lg:text-left">
+            <p className="text-theme-secondary text-base sm:text-lg font-light text-center lg:text-left">
               {t("experience.description")}
             </p>
           </motion.div>

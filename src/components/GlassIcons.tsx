@@ -69,7 +69,7 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
             }}
           >
             <span
-              className="m-auto w-[1.5em] h-[1.5em] flex items-center justify-center text-white" // Adicionado text-white para os ícones
+              className="m-auto w-[1.5em] h-[1.5em] flex items-center justify-center text-gray-800 dark:text-white"
               aria-hidden="true"
             >
               {item.icon}
