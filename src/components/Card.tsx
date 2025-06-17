@@ -10,7 +10,7 @@ interface CardProps {
   link: string;
 }
 
-export const Card = ({ title, description, image, link }: CardProps) => {
+export const Card = ({ title, description, image }: CardProps) => {
   const { theme } = useTheme();
   return (
     <Link
