@@ -110,10 +110,10 @@ export const Carousel = ({
         {validChildren.map((child, index) => {
           const distance = Math.abs(index - currentIndex);
 
-          // Define base classes for each item
-          // Using w-[60%] as a starting point, can be made responsive. mx-1 for small gap.
+          // Define base classes for each item with responsive widths
+          // Mobile: w-[85%], Tablet: w-[70%], Desktop: w-[60%]
           let itemDynamicClasses =
-            "flex-shrink-0 w-[60%] transition-all duration-500 ease-in-out mx-1 flex items-center justify-center";
+            "flex-shrink-0 w-[85%] sm:w-[70%] lg:w-[60%] transition-all duration-500 ease-in-out mx-1 flex items-center justify-center";
 
           // Apply styles based on distance from current index
           if (distance === 0) {
@@ -144,24 +144,24 @@ export const Carousel = ({
           <>
             <button
               onClick={goToPrevious}
-              className="absolute top-1/2 left-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-20"
+              className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-1 sm:p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-20"
               aria-label="Previous slide"
             >
               <img
                 src={ArrowLeft}
                 alt="Arrow Left"
-                className="h-12 w-12 text-text-secondary"
+                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-text-secondary"
               />
             </button>
             <button
               onClick={goToNext}
-              className="absolute top-1/2 right-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-20"
+              className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-glass-bg bg-opacity-70 rounded-full p-1 sm:p-2 hover:bg-opacity-90 transition-all duration-200 focus:outline-none shadow-xl hover:cursor-pointer hover:scale-110 z-20"
               aria-label="Next slide"
             >
               <img
                 src={ArrowRight}
                 alt="Arrow Right"
-                className="h-12 w-12 text-text-secondary"
+                className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-text-secondary"
               />
             </button>
           </>

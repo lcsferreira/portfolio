@@ -16,7 +16,7 @@ export const Card = ({ title, description, image, link }: CardProps) => {
       className="block h-full text-white no-underline"
     >
       <GlareHover
-        className="rounded-xl shadow-lg flex flex-col h-full max-w-[550px] backdrop-blur-md overflow-hidden"
+        className="rounded-xl shadow-lg flex flex-col h-full max-w-[550px] max-h-[500px] sm:max-h-[550px] lg:max-h-[600px] backdrop-blur-md overflow-hidden"
         background="hsla(210, 10%, 25%, 0.3)"
         borderColor="hsla(0, 0%, 100%, 0.2)"
         borderRadius="0.75rem"
@@ -24,7 +24,7 @@ export const Card = ({ title, description, image, link }: CardProps) => {
         glareOpacity={0.1}
       >
         {image && (
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative h-32 sm:h-40 lg:h-48 overflow-hidden">
             <img
               src={image}
               alt={title}
@@ -33,20 +33,24 @@ export const Card = ({ title, description, image, link }: CardProps) => {
           </div>
         )}
         <div className="p-0 flex flex-col flex-grow">
-          <div className="py-4">
-            <h2 className="text-xl md:text-2xl font-bold text-white border-b-2 border-primary w-fit pl-6 pb-2">
+          <div className="py-3 sm:py-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white border-b-2 border-primary w-fit pl-4 sm:pl-6 pb-2">
               {title}
             </h2>
           </div>
-          <div className="px-6 py-4 flex-grow">
-            <p className="text-base text-white/80 leading-relaxed">
+          <div className="px-4 sm:px-6 py-3 sm:py-4 flex-grow">
+            <p className="text-sm sm:text-base text-white/80 leading-relaxed line-clamp-4">
               {description}
             </p>
           </div>
-          <div className="mt-auto p-6 text-right flex justify-end items-center">
-            <div className="inline-flex items-center text-lg font-semibold hover:text-primary transition-colors duration-300">
+          <div className="mt-auto p-4 sm:p-6 text-right flex justify-end items-center">
+            <div className="inline-flex items-center text-base sm:text-lg font-semibold hover:text-primary transition-colors duration-300">
               Ver detalhes
-              <img src={NextPage} alt="Arrow Right" className="w-6 h-6 ml-2" />
+              <img
+                src={NextPage}
+                alt="Arrow Right"
+                className="w-5 h-5 sm:w-6 sm:h-6 ml-2"
+              />
             </div>
           </div>
         </div>

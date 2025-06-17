@@ -231,7 +231,7 @@ export const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="absolute top-full left-0 right-0 lg:hidden bg-glass-bg backdrop-blur-md rounded-b-md mx-4 mt-2 border-t border-primary/20"
+            className="fixed top-15 left-0 right-0 lg:hidden bg-glass-bg backdrop-blur-md rounded-b-md mx-4 mt-2 border-t border-primary/20"
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"

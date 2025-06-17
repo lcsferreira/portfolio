@@ -40,7 +40,7 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
 
   return (
     <div
-      className={`grid justify-center items-center grid-cols-4 overflow-visible ${
+      className={`flex justify-center items-center gap-4 overflow-visible ${
         className || ""
       }`}
     >

@@ -68,7 +68,7 @@ export const portfolioData: IPortfolioData = {
   email: "lucas.simoes.ferreira@gmail.com",
   phone: "+5553999384646",
   description:
-    "Desenvolvedor Web com 3 anos de experiência em desenvolvimento front-end, especializado em React e Next.js. Atuei em empresa de grande escala, startup e até mesmo como único desenvolvedor de um projeto, tenho proatividade para resolver diversos tipos de problemas, além de uma comunicação ativa e fluente.",
+    "Sempre fui um ensiasta da tecnologia, adorava video-games e aos 15 anos comecei a estudar programação. Iniciando com o clássico C. Ao passar para faculdade, comecei a estudar Java, Python, Javascript, entre outras linguagens. Foi aí que me deparei com a programação web e me apaixonei pelo desenvolvimento. Poder criar soluções versáteis e escaláveis é o que me motiva a continuar aprendendo e me desafiando.",
   projects: [
     {
       title: "GoPA! Workflow",

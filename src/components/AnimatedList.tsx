@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { motion, useInView } from "framer-motion";
 import type { IWorkExperience } from "../api/data";
+import WorkExperienceCard from "./WorkExperienceCard";
 
 interface AnimatedItemProps {
   children: ReactNode;
@@ -149,10 +150,10 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
   }, [selectedIndex, keyboardNav]);
 
   return (
-    <div className={`relative w-[650px] ${className}`}>
+    <div className={`relative w-full max-w-4xl ${className}`}>
       <div
         ref={listRef}
-        className={`max-h-[350px] overflow-y-auto p-4 ${
+        className={`max-h-[450px] sm:max-h-[500px] lg:max-h-[550px] overflow-y-auto p-2 sm:p-4 ${
           displayScrollbar
             ? "[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-primary [&::-webkit-scrollbar-thumb]:bg-secondary [&::-webkit-scrollbar-thumb]:rounded-[4px]"
             : "scrollbar-hide"
@@ -176,35 +177,27 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
               }
             }}
           >
-            <div
-              className={`p-4 bg-gray-800/50 backdrop-blur-md rounded-2xl border border-white/20 ${
-                selectedIndex === index ? "bg-gray-800/100" : ""
-              } ${itemClassName}`}
-            >
-              {typeof item === "string" ? (
+            {typeof item === "string" ? (
+              <div
+                className={`p-4 bg-gray-800/50 backdrop-blur-md rounded-2xl border border-white/20 ${
+                  selectedIndex === index ? "bg-gray-800/100" : ""
+                } ${itemClassName}`}
+              >
                 <p className="text-white m-0">{item}</p>
-              ) : (
-                <div className="flex flex-row justify-between">
-                  <div className="flex flex-col">
-                    <p className="text-white m-0">{item.role}</p>
-
-                    <a
-                      href={item.enterpriseLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary text-sm font-medium m-0"
-                    >
-                      @{item.enterprise}
-                    </a>
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="text-gray-400 text-sm m-0">
-                      {item.startDate} - {item.endDate}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
+              </div>
+            ) : (
+              <WorkExperienceCard
+                workExperience={item}
+                isSelected={selectedIndex === index}
+                onClick={() => {
+                  setSelectedIndex(index);
+                  if (onItemSelect) {
+                    onItemSelect(item, index);
+                  }
+                }}
+                onMouseEnter={() => setSelectedIndex(index)}
+              />
+            )}
           </AnimatedItem>
         ))}
       </div>

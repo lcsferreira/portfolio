@@ -99,64 +99,74 @@ export const HeroSection = () => {
   return (
     <motion.section
       ref={containerRef}
-      className="flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      className="flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
-      <div className="flex flex-row items-center justify-around w-full flex-wrap">
-        <motion.img
-          src={Lucas}
-          alt="Lucas Ferreira"
-          className="
-          w-96 h-[350px] md:h-[500px]
-          object-cover rounded-b-full object-top"
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full max-w-7xl mx-auto gap-8 lg:gap-12">
+        {/* Image - Mobile First, Desktop First */}
+        <motion.div
+          className="flex-shrink-0"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-        />
+        >
+          <img
+            src={Lucas}
+            alt="Lucas Ferreira"
+            className="
+              w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[500px] xl:w-[450px] xl:h-[550px]
+              object-cover rounded-b-full object-top
+              shadow-2xl shadow-primary/20 dark:shadow-primary/10
+              border-4 border-white/10 dark:border-white/5
+            "
+          />
+        </motion.div>
+        {/* Content - Mobile First, Desktop Second */}
         <motion.div
           variants={itemVariants}
-          className="order-2 lg:order-1 z-10 p-8 w-max"
+          className="flex-1 text-center lg:text-left max-w-lg lg:max-w-none"
         >
-          <p className="text-primary dark:text-text-secondary text-center md:text-left  flex flex-col">
-            <motion.span
-              className="text-primary dark:text-text-secondary text-xl sm:text-2xl lg:text-3xl mt-2 flex flex-row items-center gap-2"
+          <div className="space-y-4">
+            <motion.div
+              className="text-primary dark:text-text-secondary text-lg sm:text-xl md:text-2xl flex flex-row items-center justify-center lg:justify-start gap-2"
               variants={nameVariants}
             >
               <motion.span
-                className="text-primary dark:text-text-secondary text-sm sm:text-md lg:text-lg"
                 variants={handVariants}
                 animate={["visible", "wave"]}
               >
-                <FaHand className="text-primary dark:text-text-secondary text-lg sm:text-xl lg:text-2xl" />
+                <FaHand className="text-lg sm:text-xl md:text-2xl" />
               </motion.span>
               Olá, eu sou
-            </motion.span>
-            <motion.span
-              className="text-secondary dark:text-primary text-5xl sm:text-5xl lg:text-6xl block mt-2"
+            </motion.div>
+
+            <motion.h1
+              className="text-secondary dark:text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight"
               variants={nameVariants}
             >
               {name}
-            </motion.span>
-            <motion.span
-              className="text-primary dark:text-text-secondary text-xl sm:text-2xl lg:text-3xl  mt-2"
+            </motion.h1>
+
+            <motion.p
+              className="text-primary dark:text-text-secondary text-lg sm:text-xl md:text-2xl lg:text-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
             >
               {title}
-            </motion.span>
-          </p>
+            </motion.p>
+          </div>
 
           <motion.div
-            className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
+            className="mt-8 lg:mt-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.5 }}
           >
             <motion.button
-              className="bg-primary/80 backdrop-blur-sm border border-white/10 hover:bg-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-base hover:cursor-pointer"
+              className="bg-primary/80 backdrop-blur-sm border border-white/10 hover:bg-primary text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-base hover:cursor-pointer w-full sm:w-auto"
               variants={buttonVariants}
               whileHover="hover"
               onClick={handleDownloadCV}

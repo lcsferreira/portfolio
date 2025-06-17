@@ -38,13 +38,17 @@ export const ContactSection = () => {
   };
 
   return (
-    <section className="flex flex-col gap-10 pb-10">
-      <h2 className="self-center text-3xl text-text-secondary ">Contato</h2>
-      <div className="flex w-full justify-between gap-10">
-        <div className="flex flex-col gap-10 w-1/2">
-          <div className="flex gap-2 w-full flex-col border border-gray-500 rounded-lg p-4 bg-gray-800/50 backdrop-blur-md">
+    <section className="flex flex-col gap-6 md:gap-10 pb-10 px-4 md:px-0">
+      <h2 className="self-center text-2xl md:text-3xl text-text-secondary">
+        Contato
+      </h2>
+      <div className="flex flex-col lg:flex-row w-full justify-between gap-6 lg:gap-10">
+        <div className="flex flex-col gap-6 lg:gap-10 w-full lg:w-1/2">
+          <div className="flex gap-4 w-full flex-col rounded-lg px-2 md:px-4">
             <div className="flex flex-col gap-2">
-              <label htmlFor="name">Nome</label>
+              <label htmlFor="name" className="text-sm md:text-base">
+                Nome
+              </label>
               <Input
                 type="text"
                 value={name}
@@ -52,7 +56,9 @@ export const ContactSection = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="message">Mensagem</label>
+              <label htmlFor="message" className="text-sm md:text-base">
+                Mensagem
+              </label>
               <Input
                 type="text"
                 value={message}
@@ -62,25 +68,30 @@ export const ContactSection = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="bg-primary text-white p-2 rounded-md w-full mt-2 hover:bg-primary/80 transition-colors duration-300 hover:cursor-pointer"
+              className="bg-primary text-white p-3 md:p-2 rounded-md w-full mt-2 hover:bg-primary/80 transition-colors duration-300 hover:cursor-pointer text-sm md:text-base"
             >
               Enviar
             </button>
-            <p className="text-sm text-gray-400 mt-2">
+            <p className="text-xs md:text-sm text-gray-400 mt-2 text-center lg:text-left">
               Ao clicar em "Enviar", você será redirecionado para o WhatsApp com
               a mensagem preenchida automaticamente.
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-10 w-1/2">
-          <AnimatedShinyText className="text-3xl text-left" shimmerWidth={100}>
+        <div className="flex flex-col gap-6 lg:gap-10 w-full lg:w-1/2">
+          <AnimatedShinyText
+            className="text-xl md:text-2xl lg:text-3xl text-center lg:text-left"
+            shimmerWidth={100}
+          >
             Vamos trabalhar juntos!
           </AnimatedShinyText>
-          <p className="text-text-secondary">
+          <p className="text-text-secondary text-sm md:text-base text-center lg:text-left">
             Estou disponível para conversar sobre projetos, oportunidades de
             trabalho ou simplesmente para bater um papo.
           </p>
-          <GlassIcons items={socialIcons} />
+          <div className="flex justify-center lg:justify-start">
+            <GlassIcons items={socialIcons} />
+          </div>
         </div>
       </div>
     </section>
