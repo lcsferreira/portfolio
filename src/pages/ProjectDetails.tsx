@@ -101,7 +101,7 @@ export const ProjectDetails = () => {
                 <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full rounded-xl overflow-hidden shadow-2xl">
                   <motion.img
                     key={currentScreenshot}
-                    src={`../src/assets/${project.screenshots[currentScreenshot]}`}
+                    src={`../src/assets${project.screenshots[currentScreenshot]}`}
                     alt={`Screenshot ${currentScreenshot + 1} do ${
                       project.title
                     }`}
@@ -158,7 +158,7 @@ export const ProjectDetails = () => {
                         }`}
                       >
                         <img
-                          src={`../src/assets/${screenshot}`}
+                          src={`../src/assets${screenshot}`}
                           alt={`Thumbnail ${index + 1}`}
                           className="w-full h-full object-cover"
                         />
