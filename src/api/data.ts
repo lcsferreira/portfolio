@@ -44,7 +44,7 @@ interface ISocial {
   link: string;
 }
 
-interface IPortfolioData {
+export interface IPortfolioData {
   name: string;
   title: string;
   email: string;

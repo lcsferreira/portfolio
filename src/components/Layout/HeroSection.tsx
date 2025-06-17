@@ -4,11 +4,13 @@ import Lucas from "../../assets/profileImage.jpg";
 import { useRef } from "react";
 import { portfolioData } from "../../api/data";
 import { FaHand } from "react-icons/fa6";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
-  const { name, title } = portfolioData;
+  const { name } = portfolioData;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -139,7 +141,7 @@ export const HeroSection = () => {
               >
                 <FaHand className="text-lg sm:text-xl md:text-2xl" />
               </motion.span>
-              Olá, eu sou
+              {t("hero.greeting")}
             </motion.div>
 
             <motion.h1
@@ -155,7 +157,7 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
             >
-              {title}
+              {t("hero.title")}
             </motion.p>
           </div>
 

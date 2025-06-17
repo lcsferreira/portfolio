@@ -3,10 +3,12 @@ import { Switch } from "./Switch";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTheme } from "../contexts/ThemeContext";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const { theme, toggleTheme } = useTheme();
+  const { t } = useLanguage();
   const isDarkMode = theme === "dark";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const location = useLocation();
@@ -49,17 +51,17 @@ export const Header = () => {
 
   const headerOptions = [
     {
-      label: "Sobre mim",
+      label: t("nav.about"),
       href: "/#about-me",
       id: "about-me",
     },
     {
-      label: "Projetos",
+      label: t("nav.projects"),
       href: "/#projects",
       id: "projects",
     },
     {
-      label: "Contato",
+      label: t("nav.contact"),
       href: "/#contact",
       id: "contact",
     },

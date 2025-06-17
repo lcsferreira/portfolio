@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
-import { portfolioData } from "../api/data";
 import { motion } from "motion/react";
 import { useTheme } from "../contexts/ThemeContext";
+import { useLanguage } from "../contexts/LanguageContext";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import ChipCard from "../components/ChipCard";
@@ -17,7 +17,9 @@ import { useEffect, useState } from "react";
 export const ProjectDetails = () => {
   const { projectId } = useParams();
   const { theme } = useTheme();
-  const project = portfolioData.projects.find((p) => p.title === projectId);
+  const { t, getTranslatedPortfolioData } = useLanguage();
+  const translatedData = getTranslatedPortfolioData();
+  const project = translatedData.projects.find((p) => p.title === projectId);
   const [currentScreenshot, setCurrentScreenshot] = useState(0);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export const ProjectDetails = () => {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <h1 className="text-4xl font-bold text-primary">
-          Projeto não encontrado
+          {t("projectDetails.notFound")}
         </h1>
       </div>
     );
@@ -73,7 +75,7 @@ export const ProjectDetails = () => {
               className="hover:text-primary transition-colors duration-300 flex items-center gap-2"
             >
               <FaArrowLeft />
-              Voltar
+              {t("projectDetails.back")}
             </Link>
             <h1 className="text-4xl font-bold text-primary">{project.title}</h1>
             {project.role && project.startDate && project.endDate && (
@@ -119,7 +121,7 @@ export const ProjectDetails = () => {
                     <button
                       onClick={prevScreenshot}
                       className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-primary/20 backdrop-blur-sm hover:bg-primary/30 text-primary p-3 rounded-full opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 hover:scale-110"
-                      aria-label="Screenshot anterior"
+                      aria-label={t("projectDetails.prevScreenshot")}
                     >
                       <FaChevronLeft size={16} />
                     </button>
@@ -127,7 +129,7 @@ export const ProjectDetails = () => {
                     <button
                       onClick={nextScreenshot}
                       className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-primary/20 backdrop-blur-sm hover:bg-primary/30 text-primary p-3 rounded-full opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 hover:scale-110"
-                      aria-label="Próximo screenshot"
+                      aria-label={t("projectDetails.nextScreenshot")}
                     >
                       <FaChevronRight size={16} />
                     </button>
@@ -136,7 +138,8 @@ export const ProjectDetails = () => {
 
                 {/* Contador */}
                 <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {currentScreenshot + 1} de {project.screenshots.length}
+                  {currentScreenshot + 1} {t("projectDetails.counter")}{" "}
+                  {project.screenshots.length}
                 </div>
               </div>
 
@@ -177,7 +180,9 @@ export const ProjectDetails = () => {
                           ? "bg-primary scale-125"
                           : "bg-text-secondary/30 hover:bg-text-secondary/60"
                       }`}
-                      aria-label={`Ir para screenshot ${index + 1}`}
+                      aria-label={`${t("projectDetails.goToScreenshot")} ${
+                        index + 1
+                      }`}
                     />
                   ))}
                 </div>
@@ -195,7 +200,7 @@ export const ProjectDetails = () => {
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div className="flex-1">
                   <h2 className="text-2xl font-semibold text-text-secondary mb-4">
-                    Descrição
+                    {t("projectDetails.description")}
                   </h2>
                   <p className="text-lg text-text-secondary leading-relaxed">
                     {project.longDescription || project.description}
@@ -211,7 +216,7 @@ export const ProjectDetails = () => {
                     className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary/80 text-white px-6 py-3 rounded-xl hover:from-primary/90 hover:to-primary/70 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-medium"
                   >
                     <FaExternalLinkAlt size={16} />
-                    Visitar Projeto
+                    {t("projectDetails.visitProject")}
                   </a>
                 </div>
               </div>
@@ -220,7 +225,7 @@ export const ProjectDetails = () => {
             {project.technologies && (
               <div className="flex flex-col gap-4">
                 <h2 className="text-2xl font-semibold text-text-secondary">
-                  Tecnologias
+                  {t("projectDetails.technologies")}
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
@@ -233,7 +238,7 @@ export const ProjectDetails = () => {
             {project.features && (
               <div className="flex flex-col gap-6">
                 <h2 className="text-2xl font-semibold text-text-secondary">
-                  Funcionalidades Principais
+                  {t("projectDetails.features")}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.features.map((feature, index) => (

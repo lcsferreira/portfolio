@@ -1,10 +1,11 @@
-import { portfolioData } from "../../api/data";
 import { Card } from "../Card";
 import { Carousel } from "../Carousel";
 import { AnimatedShinyText } from "../ShinyText";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export const ProjectSection = () => {
-  const { projects } = portfolioData;
+  const { t, getTranslatedPortfolioData } = useLanguage();
+  const { projects } = getTranslatedPortfolioData();
 
   return (
     // TODO: Implement the project section
@@ -13,7 +14,7 @@ export const ProjectSection = () => {
         className="text-3xl text-primary text-left"
         shimmerWidth={100}
       >
-        Projetos
+        {t("projects.title")}
       </AnimatedShinyText>
       <Carousel
         autoPlay={false}

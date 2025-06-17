@@ -1,47 +1,11 @@
-import { portfolioData } from "../../api/data";
 import AnimatedList from "../AnimatedList";
 import { AnimatedShinyText } from "../ShinyText";
 import { motion } from "framer-motion";
-import {
-  FaBriefcase,
-  FaCode,
-  FaCalendarAlt,
-  FaUsers,
-  FaRocket,
-} from "react-icons/fa";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export const WorkExperienceSection = () => {
-  const workExperience = portfolioData.workExperience;
-
-  // Dados estatísticos derivados da experiência profissional
-  const totalExperience = workExperience.length;
-  const currentRole = workExperience.find((exp) => exp.endDate === "Atual");
-  const allTechnologies = [
-    ...new Set(workExperience.flatMap((exp) => exp.technologiesUsed)),
-  ];
-  const totalTechnologies = allTechnologies.length;
-
-  const stats = [
-    {
-      icon: FaBriefcase,
-      value: totalExperience,
-      label: "Experiências",
-      color: "text-purple-400",
-    },
-    {
-      icon: FaCode,
-      value: totalTechnologies,
-      label: "Tecnologias",
-      color: "text-blue-400",
-    },
-    { icon: FaRocket, value: "3+", label: "Anos", color: "text-green-400" },
-    {
-      icon: FaUsers,
-      value: "50+",
-      label: "Projetos",
-      color: "text-orange-400",
-    },
-  ];
+  const { t, getTranslatedPortfolioData } = useLanguage();
+  const { workExperience } = getTranslatedPortfolioData();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -84,14 +48,10 @@ export const WorkExperienceSection = () => {
               className="text-2xl sm:text-3xl text-center lg:text-left"
               shimmerWidth={100}
             >
-              Experiência Profissional
+              {t("experience.title")}
             </AnimatedShinyText>
             <p className="text-text-secondary text-base sm:text-lg font-light text-center lg:text-left">
-              Desenvolvedor Web com 3 anos de experiência em desenvolvimento
-              front-end, especializado em React e Next.js. Atuei em empresa de
-              grande escala, startup e até mesmo como único desenvolvedor de um
-              projeto, tenho proatividade para resolver diversos tipos de
-              problemas, além de uma comunicação ativa e fluente.
+              {t("experience.description")}
             </p>
           </motion.div>
         </div>
