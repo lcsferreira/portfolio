@@ -172,7 +172,7 @@ export const Header = () => {
       animate="visible"
     >
       <motion.nav
-        className="hidden lg:flex items-center gap-4 bg-glass-bg rounded-md px-4 py-2  mx-auto z-10 fixed top-4 left-1/2 transform -translate-x-1/2 border border-white/10 bg-amber-50/10 backdrop-blur-md  overflow-hidden"
+        className="hidden lg:flex items-center gap-4 bg-glass-bg rounded-md px-4 py-2  mx-auto z-10 fixed top-4 left-1/2 transform -translate-x-1/2 border border-white/10 dark:bg-amber-50/10 backdrop-blur-md  overflow-hidden bg-gray-900/50"
         variants={navVariants}
         whileHover="hover"
         animate={{
@@ -182,12 +182,12 @@ export const Header = () => {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <ul className="flex items-center gap-8 text-lg text-theme-secondary">
+        <ul className="flex items-center gap-8 text-lg text-gray-700 dark:text-gray-300">
           {headerOptions.map((option) => (
             <a
               key={option.label}
               href={option.href}
-              className="hover:text-primary transition-colors duration-300"
+              className="hover:text-primary transition-colors duration-300 text-white"
               onClick={(e) => handleNavigation(e, option.id)}
             >
               {option.label}
