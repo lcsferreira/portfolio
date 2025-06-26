@@ -161,7 +161,7 @@ const portfolioTranslations = {
     // Dados pessoais
     title: "Desenvolvedor de Software",
     description:
-      "Sempre fui um ensiasta da tecnologia, adorava video-games e aos 15 anos comecei a estudar programação. Iniciando com o clássico C. Ao passar para faculdade, comecei a estudar Java, Python, Javascript, entre outras linguagens. Foi aí que me deparei com a programação web e me apaixonei pelo desenvolvimento. Poder criar soluções versáteis e escaláveis é o que me motiva a continuar aprendendo e me desafiando.",
+      "Sempre fui um entusiasta da tecnologia, adorava video-games e aos 15 anos comecei a estudar programação. Iniciando com o clássico C. Ao passar para faculdade, comecei a estudar Java, Python, Javascript, entre outras linguagens. Foi aí que me deparei com a programação web e me apaixonei pelo desenvolvimento. Poder criar soluções versáteis e escaláveis é o que me motiva a continuar aprendendo e me desafiando.",
 
     // Projetos
     projects: {
