@@ -94,7 +94,7 @@ export const HeroSection = () => {
 
   const handleDownloadCV = () => {
     // TODO: Implement CV download
-    const pdfUrl = "./src/assets/Ferreira_CV.pdf";
+    const pdfUrl = "./Ferreira_CV.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
     link.download = "Lucas_Ferreira_CV.pdf";
